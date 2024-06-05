@@ -15,9 +15,15 @@ interface SelectableItems {
 
 interface ItemProps {
   onSelect?: any;
+  isCollapsed: boolean;
+  onCollapseToggle: () => void;
 }
 
-export default function Sidebar({ onSelect }: ItemProps) {
+export default function Sidebar({
+  onSelect,
+  isCollapsed,
+  onCollapseToggle,
+}: ItemProps) {
   const [selected, setSelected] = useState<SelectableItems | string>(
     "messages"
   );
@@ -167,8 +173,18 @@ export default function Sidebar({ onSelect }: ItemProps) {
 
         {/* Corresponding items */}
         <div className="col-span-5 h-full">
-          <div className="py-5 px-10 shadow-sm">
+          {/* <div className={`border-r-2 bg-[#FBFBFB] transition-all duration-300`}> */}
+          <div className="py-5 px-10 shadow-sm flex items-center justify-between">
             <h1 className="font-semibold text-xl">WireDesk</h1>
+
+            <button onClick={onCollapseToggle}>
+              <Image
+                src="/sidebar/items/collapse.svg"
+                width={18}
+                height={18}
+                alt="collapse"
+              />
+            </button>
           </div>
 
           <div className="px-2 mt-2">

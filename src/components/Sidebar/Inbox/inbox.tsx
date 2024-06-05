@@ -96,6 +96,34 @@ const tickets = [
   },
 ];
 
+const channels = [
+  {
+    title: "Whatsapp",
+    unread: "14",
+    icon: <UserX size={16} />,
+  },
+  {
+    title: "Instagram",
+    unread: "20",
+    icon: <UserX size={16} />,
+  },
+  {
+    title: "Gmail",
+    unread: "13",
+    icon: <UserX size={16} />,
+  },
+  {
+    title: "Slack",
+    unread: "8",
+    icon: <UserX size={16} />,
+  },
+  {
+    title: "Facebook",
+    unread: "2",
+    icon: <UserX size={16} />,
+  },
+];
+
 export default function Inbox() {
   const [selectedInbox, setSelectedInbox] = useState("Inbox");
 
@@ -203,6 +231,33 @@ export default function Inbox() {
                 }`}
               >
                 {ticket.unread}
+              </p>
+            </div>
+          ))}
+        />
+      </div>
+
+      {/* Channels */}
+      <div className="mt-4">
+        <Dropdown
+          title="Channels"
+          items={channels.map((channel, id) => (
+            <div
+              key={id}
+              className="flex justify-between items-center p-2 opacity-75"
+            >
+              <div className="flex items-center gap-1.5 text-sm font-medium">
+                <p>{channel.icon}</p>
+                <p>{channel.title}</p>
+              </div>
+
+              <p
+                className={`text-[0.75rem] ${
+                  selectedInbox === channel.title &&
+                  "bg-black px-1 rounded-md text-[#DB0629]"
+                }`}
+              >
+                {channel.unread}
               </p>
             </div>
           ))}
