@@ -6,7 +6,7 @@ import Details from "./Details/details";
 
 export default function MainContent() {
   return (
-    <div className="grid grid-cols-8 h-screen px-2 py-5">
+    <div className="w-full flex h-screen">
       <Sidebar />
       <Message />
       <Details />
