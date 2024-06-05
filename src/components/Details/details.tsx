@@ -1,3 +1,5 @@
 export default function Details() {
-  return <div>This is the details page</div>;
+  return (
+    <div className="bg-green-500 col-span-2">This is the details page</div>
+  );
 }
