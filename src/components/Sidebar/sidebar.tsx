@@ -184,7 +184,7 @@ export default function Sidebar({
 
             <button
               onClick={onCollapseToggle}
-              className="w-full flex justify-center"
+              className="w-full flex justify-end"
             >
               <Image
                 src="/sidebar/items/collapse.svg"
