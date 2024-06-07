@@ -2,6 +2,15 @@
 import { useState } from "react";
 import Image from "next/image";
 import Inbox from "./Inbox/inbox";
+import {
+  MdOutlineSupportAgent,
+  MdOutlineCampaign,
+  MdBarChart,
+  MdOutlineSettings,
+  MdOutlineRemove,
+  MdOutlineMarkEmailUnread,
+} from "react-icons/md";
+import { BsStars } from "react-icons/bs";
 
 interface SelectableItems {
   messages: string;
@@ -30,13 +39,18 @@ export default function Sidebar({
 
   const handleSelect = (item: string) => {
     setSelected(item);
-    onSelect(item);
+    // onSelect(item);
   };
   return (
-    <section className="border-r-2 w-[20%] bg-[#FBFBFB]">
-      <div className="grid grid-cols-6 h-full">
-        <div className="col-span-1 border-r-2">
-          <div className="shadow-sm py-5 px-3">
+    <section
+      className={`border-r-2 bg-[#FBFBFB] ${
+        isCollapsed ? "w-[10%]" : "w-[20%]"
+      }`}
+    >
+      {/* <div className="grid grid-cols-6 h-full"> */}
+      <div className="flex w-full h-full">
+        <div className={`border-r-2 ${isCollapsed ? "w-[50%]" : "w-[20%]"}`}>
+          <div className="shadow-sm h-16 px-3 flex items-center justify-center">
             <Image src="/sidebar/logo.svg" alt="logo" width={30} height={30} />
           </div>
 
@@ -45,14 +59,12 @@ export default function Sidebar({
               <button
                 onClick={() => handleSelect("messages")}
                 className={`mb-5 p-2 ${
-                  selected === "messages" && "bg-black rounded-lg "
+                  selected === "messages" && "bg-black rounded-lg"
                 }`}
               >
-                <Image
-                  src="/sidebar/email.png"
-                  alt="email"
-                  width={24}
-                  height={24}
+                <MdOutlineMarkEmailUnread
+                  size={24}
+                  color={selected === "messages" ? "white" : ""}
                 />
               </button>
             </div>
@@ -61,30 +73,23 @@ export default function Sidebar({
               <button
                 onClick={() => handleSelect("mylo")}
                 className={`mb-5 p-2 ${
-                  selected === "mylo" && "bg-black rounded-lg "
+                  selected === "mylo" && "bg-black rounded-lg"
                 }`}
               >
-                <Image
-                  src="/sidebar/mylo.png"
-                  alt="email"
-                  width={24}
-                  height={24}
-                />
+                <BsStars size={24} color={selected === "mylo" ? "white" : ""} />
               </button>
             </div>
 
             <div>
               <button
-                onClick={() => handleSelect("three")}
+                onClick={() => handleSelect("support")}
                 className={`mb-5 p-2 ${
-                  selected === "three" && "bg-black rounded-lg "
+                  selected === "support" && "bg-black rounded-lg"
                 }`}
               >
-                <Image
-                  src="/sidebar/three.png"
-                  alt="email"
-                  width={24}
-                  height={24}
+                <MdOutlineSupportAgent
+                  size={24}
+                  color={selected === "support" ? "white" : ""}
                 />
               </button>
             </div>
@@ -93,14 +98,12 @@ export default function Sidebar({
               <button
                 onClick={() => handleSelect("campaign")}
                 className={`mb-5 p-2 ${
-                  selected === "campaign" && "bg-black rounded-lg "
+                  selected === "campaign" && "bg-black rounded-lg"
                 }`}
               >
-                <Image
-                  src="/sidebar/campaign.png"
-                  alt="email"
-                  width={24}
-                  height={24}
+                <MdOutlineCampaign
+                  size={24}
+                  color={selected === "campaign" ? "white" : ""}
                 />
               </button>
             </div>
@@ -109,14 +112,12 @@ export default function Sidebar({
               <button
                 onClick={() => handleSelect("finance")}
                 className={`mb-5 p-2 ${
-                  selected === "finance" && "bg-black rounded-lg "
+                  selected === "finance" && "bg-black rounded-lg"
                 }`}
               >
-                <Image
-                  src="/sidebar/finance.png"
-                  alt="email"
-                  width={24}
-                  height={24}
+                <MdBarChart
+                  size={24}
+                  color={selected === "finance" ? "white" : ""}
                 />
               </button>
             </div>
@@ -125,14 +126,12 @@ export default function Sidebar({
               <button
                 onClick={() => handleSelect("settings")}
                 className={`mb-5 p-2 ${
-                  selected === "settings" && "bg-black rounded-lg "
+                  selected === "settings" && "bg-black rounded-lg"
                 }`}
               >
-                <Image
-                  src="/sidebar/settings.png"
-                  alt="email"
-                  width={24}
-                  height={24}
+                <MdOutlineSettings
+                  size={24}
+                  color={selected === "settings" ? "white" : ""}
                 />
               </button>
             </div>
@@ -141,14 +140,12 @@ export default function Sidebar({
               <button
                 onClick={() => handleSelect("minus")}
                 className={`mb-5 p-2 ${
-                  selected === "minus" && "bg-black rounded-lg "
+                  selected === "minus" && "bg-black rounded-lg"
                 }`}
               >
-                <Image
-                  src="/sidebar/minus.png"
-                  alt="email"
-                  width={24}
-                  height={24}
+                <MdOutlineRemove
+                  size={24}
+                  color={selected === "minus" ? "white" : ""}
                 />
               </button>
             </div>
@@ -157,14 +154,12 @@ export default function Sidebar({
               <button
                 onClick={() => handleSelect("mylo_last")}
                 className={`mb-5 p-2 ${
-                  selected === "mylo_last" && "bg-black rounded-lg "
+                  selected === "mylo_last" && "bg-black rounded-lg"
                 }`}
               >
-                <Image
-                  src="/sidebar/mylo_last.png"
-                  alt="email"
-                  width={24}
-                  height={24}
+                <BsStars
+                  size={24}
+                  color={selected === "mylo_last" ? "white" : ""}
                 />
               </button>
             </div>
@@ -172,12 +167,25 @@ export default function Sidebar({
         </div>
 
         {/* Corresponding items */}
-        <div className="col-span-5 h-full">
+        <div className={`h-full ${isCollapsed ? "w-[50%]" : "w-[80%]"}`}>
           {/* <div className={`border-r-2 bg-[#FBFBFB] transition-all duration-300`}> */}
-          <div className="py-5 px-10 shadow-sm flex items-center justify-between">
-            <h1 className="font-semibold text-xl">WireDesk</h1>
+          <div
+            className={`h-16 shadow-sm flex items-center justify-between ${
+              isCollapsed ? "w-full" : "px-10"
+            }`}
+          >
+            <h1
+              className={`font-semibold text-xl ${
+                isCollapsed ? "hidden" : "block"
+              }`}
+            >
+              WireDesk
+            </h1>
 
-            <button onClick={onCollapseToggle}>
+            <button
+              onClick={onCollapseToggle}
+              className="w-full flex justify-center"
+            >
               <Image
                 src="/sidebar/items/collapse.svg"
                 width={18}
@@ -187,7 +195,9 @@ export default function Sidebar({
             </button>
           </div>
 
-          <div className="px-2 mt-2">
+          <div
+            className={`px-2 mt-2 h-full ${isCollapsed ? "hidden" : "block"}`}
+          >
             {selected === "messages" && <Inbox />}
           </div>
         </div>

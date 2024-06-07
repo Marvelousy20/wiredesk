@@ -11,6 +11,8 @@ interface DropdownProps {
 const Dropdown = ({ title, items }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(true);
 
+  console.log(isOpen);
+
   return (
     <div className="w-full">
       <button

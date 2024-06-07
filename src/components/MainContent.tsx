@@ -16,7 +16,7 @@ export default function MainContent() {
       />
       <div
         className={`transition-all duration-300 ${
-          isSidebarCollapsed ? "w-[75%]" : "w-[60%]"
+          isSidebarCollapsed ? "w-[70%]" : "w-[60%]"
         }`}
       >
         <Message />

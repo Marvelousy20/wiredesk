@@ -1,0 +1,54 @@
+import Image from "next/image";
+import MessageCard from "./MessageCard";
+
+const MessagesInbox = () => {
+  return (
+    <section>
+      <div className="h-16 shadow-sm flex items-center justify-between px-5">
+        <h1 className="font-semibold text-xl">Inbox</h1>
+
+        <div className="flex items-center gap-2">
+          <Image
+            src="/messages/search.svg"
+            alt="search"
+            width={18}
+            height={18}
+          />
+
+          <Image
+            src="/messages/check_box.svg"
+            alt="search"
+            width={24}
+            height={24}
+          />
+        </div>
+      </div>
+
+      <div className="w-full mt-2">
+        <MessageCard
+          img="/messages/w-avatar.svg"
+          name="James Books"
+          status="Sent"
+          time="12:15 PM"
+          platform="/messages/Whatsapp.svg"
+        />
+        <MessageCard
+          img="/messages/i-avatar.svg"
+          name="Lucas Hernadez"
+          status="Hello, I just submited..."
+          time="12:15 PM"
+          platform="/messages/Instagram.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Martha Judge"
+          status="Hello, I just submited..."
+          time="12:15 PM"
+          platform="/messages/Slack.svg"
+        />
+      </div>
+    </section>
+  );
+};
+
+export default MessagesInbox;
