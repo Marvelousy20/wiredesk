@@ -7,6 +7,20 @@ import Details from "./Details/details";
 
 export default function MainContent() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+  const [isDetailedSidebarCollapsed, setIsDetailedSidebarCollapsed] =
+    useState(false);
+
+  const getMessageWidth = () => {
+    if (isSidebarCollapsed && isDetailedSidebarCollapsed) {
+      return "w-[85%]";
+    } else if (isSidebarCollapsed || isDetailedSidebarCollapsed) {
+      return "w-[70%]";
+    } else {
+      return "w-[60%]";
+    }
+  };
+
+  console.log(isDetailedSidebarCollapsed);
 
   return (
     <div className="w-full flex h-screen">
@@ -14,14 +28,15 @@ export default function MainContent() {
         isCollapsed={isSidebarCollapsed}
         onCollapseToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
       />
-      <div
-        className={`transition-all duration-300 ${
-          isSidebarCollapsed ? "w-[70%]" : "w-[60%]"
-        }`}
-      >
+      <div className={`transition-all duration-300 ${getMessageWidth()}`}>
         <Message />
       </div>
-      <Details />
+      <Details
+        isCollapsed={isDetailedSidebarCollapsed}
+        onCollapseToggle={() =>
+          setIsDetailedSidebarCollapsed(!isDetailedSidebarCollapsed)
+        }
+      />
     </div>
   );
 }
