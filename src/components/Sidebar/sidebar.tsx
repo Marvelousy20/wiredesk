@@ -11,6 +11,7 @@ import {
   MdOutlineMarkEmailUnread,
 } from "react-icons/md";
 import { BsStars } from "react-icons/bs";
+import { LuPanelLeftClose } from "react-icons/lu";
 
 interface SelectableItems {
   messages: string;
@@ -190,12 +191,7 @@ export default function Sidebar({
                   : "w-full flex justify-end"
               }
             >
-              <Image
-                src="/sidebar/items/collapse.svg"
-                width={18}
-                height={18}
-                alt="collapse"
-              />
+              <LuPanelLeftClose size={20} />
             </button>
           </div>
 

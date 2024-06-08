@@ -13,7 +13,11 @@ export default function Details({ isCollapsed, onCollapseToggle }: ItemProps) {
       <div className="relative">
         <div className="">
           <TabGroup className="">
-            <div className="h-16 shadow-sm w-full flex items-center px-8">
+            <div
+              className={`h-16 shadow-sm w-full flex items-center ${
+                isCollapsed ? "" : "px-8"
+              }`}
+            >
               <TabList
                 className={`justify-between font-semibold text-xl ${
                   isCollapsed ? "hidden" : "flex w-[85%]"
@@ -35,7 +39,7 @@ export default function Details({ isCollapsed, onCollapseToggle }: ItemProps) {
                 }`}
                 onClick={onCollapseToggle}
               >
-                <LuPanelRightClose size={20} className="cursor-pointer" />
+                <LuPanelRightClose size={20} />
               </button>
             </div>
             <TabPanels className={isCollapsed ? "hidden" : "block"}>

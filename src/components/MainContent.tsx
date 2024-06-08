@@ -14,7 +14,7 @@ export default function MainContent() {
     if (isSidebarCollapsed && isDetailedSidebarCollapsed) {
       return "w-[85%]";
     } else if (isSidebarCollapsed || isDetailedSidebarCollapsed) {
-      return "w-[70%]";
+      return "w-[75%]";
     } else {
       return "w-[60%]";
     }
