@@ -8,7 +8,7 @@ import {
 const MessageDetails = () => {
   return (
     <section>
-      <div className="h-16 shadow-sm flex items-center justify-between px-5 w-full">
+      <div className="h-16 shadow-bottom flex items-center justify-between px-5 w-full">
         <div className="flex justify-between items-center w-full">
           <div className="flex gap-2">
             <Image
@@ -17,7 +17,7 @@ const MessageDetails = () => {
               width={25}
               height={25}
             />
-            <h1 className="font-semibold text-xl">James Books</h1>
+            <h1 className="font-semibold text-lg">James Books</h1>
           </div>
 
           <div className="flex items-center gap-10">

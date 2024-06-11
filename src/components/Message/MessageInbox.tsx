@@ -5,8 +5,8 @@ import OrderDropdown from "../General/OrderDropwdown";
 const MessagesInbox = () => {
   return (
     <section>
-      <div className="h-16 shadow-sm flex items-center justify-between px-5">
-        <h1 className="font-semibold text-xl">Inbox</h1>
+      <div className="h-16 shadow-bottom flex items-center justify-between px-5">
+        <h1 className="font-semibold text-lg">Inbox</h1>
 
         <div className="flex items-center gap-2">
           <Image

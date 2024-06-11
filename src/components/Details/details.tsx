@@ -15,12 +15,12 @@ export default function Details({ isCollapsed, onCollapseToggle }: ItemProps) {
         <div className="">
           <TabGroup className="">
             <div
-              className={`h-16 shadow-sm w-full flex items-center ${
+              className={`h-16 shadow-bottom w-full flex items-center shadow-b-2 ${
                 isCollapsed ? "" : "px-8"
               }`}
             >
               <TabList
-                className={`justify-between font-semibold text-xl ${
+                className={`justify-between font-semibold text-lg ${
                   isCollapsed ? "hidden" : "flex w-[85%]"
                 }`}
               >

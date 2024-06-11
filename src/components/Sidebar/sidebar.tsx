@@ -45,14 +45,14 @@ export default function Sidebar({
   };
   return (
     <section
-      className={`border-r-2 bg-[#FBFBFB] ${
-        isCollapsed ? "w-[10%]" : "w-[20%]"
+      className={` ${
+        isCollapsed ? "w-[10%]" : "w-[20%] border-r-2 bg-[#FBFBFB]"
       }`}
     >
       {/* <div className="grid grid-cols-6 h-full"> */}
       <div className="flex w-full h-full">
         <div className={`border-r-2 ${isCollapsed ? "w-[50%]" : "w-[20%]"}`}>
-          <div className="shadow-sm h-16 px-3 flex items-center justify-center">
+          <div className="shadow-bottom h-16 px-3 flex items-center justify-center">
             <Image src="/sidebar/logo.svg" alt="logo" width={30} height={30} />
           </div>
 
@@ -172,7 +172,7 @@ export default function Sidebar({
         <div className={`h-full ${isCollapsed ? "w-[50%]" : "w-[80%]"}`}>
           {/* <div className={`border-r-2 bg-[#FBFBFB] transition-all duration-300`}> */}
           <div
-            className={`h-16 shadow-sm flex items-center justify-between ${
+            className={`h-16 shadow-bottom flex items-center justify-between ${
               isCollapsed ? "w-full" : "px-10"
             }`}
           >
