@@ -3,12 +3,13 @@ import { useState } from "react";
 import Image from "next/image";
 import Inbox from "./Inbox/inbox";
 import {
-  MdOutlineSupportAgent,
   MdOutlineCampaign,
   MdBarChart,
   MdOutlineSettings,
   MdOutlineRemove,
   MdOutlineMarkEmailUnread,
+  MdOutlineGroups,
+  MdOutlineSchool,
 } from "react-icons/md";
 import { BsStars } from "react-icons/bs";
 import { LuPanelLeftClose } from "react-icons/lu";
@@ -88,7 +89,7 @@ export default function Sidebar({
                   selected === "support" && "bg-black rounded-lg"
                 }`}
               >
-                <MdOutlineSupportAgent
+                <MdOutlineGroups
                   size={24}
                   color={selected === "support" ? "white" : ""}
                 />
@@ -158,7 +159,7 @@ export default function Sidebar({
                   selected === "mylo_last" && "bg-black rounded-lg"
                 }`}
               >
-                <BsStars
+                <MdOutlineSchool
                   size={24}
                   color={selected === "mylo_last" ? "white" : ""}
                 />

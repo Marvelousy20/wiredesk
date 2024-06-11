@@ -44,7 +44,7 @@ const profileDetails = () => {
         </div>
       </div>
 
-      <div className="bg-[#F4f4f4] w-full mt-6 py-4 grid gap-5">
+      <div className="bg-[#F4f4f4] w-full mt-6 py-4 grid gap-5 text-[0.75rem]">
         <div className="flex lg:px-4">
           <h1 className="w-1/2">Assignee:</h1>
           <div className="flex gap-1 w-1/2">
@@ -86,7 +86,11 @@ const profileDetails = () => {
       </div>
 
       <div className="w-full text-[0.75rem] font-medium">
-        <Disclosure as="div" className="p-6 border-b" defaultOpen={true}>
+        <Disclosure
+          as="div"
+          className="p-6 border-b text-start"
+          defaultOpen={true}
+        >
           <DisclosureButton className="group flex w-full items-center justify-between">
             <span className="font-medium">Previous Conversations</span>
             <MdOutlineKeyboardArrowDown className="size-5 group-data-[open]:rotate-180" />
@@ -94,7 +98,7 @@ const profileDetails = () => {
           <DisclosurePanel className="mt-2">No.</DisclosurePanel>
         </Disclosure>
 
-        <Disclosure as="div" className="p-6 border-b">
+        <Disclosure as="div" className="p-6 border-b text-start">
           <DisclosureButton className="group flex w-full items-center justify-between">
             <span className="font-medium">Previous Conversations</span>
             <MdOutlineKeyboardArrowDown className="size-5 group-data-[open]:rotate-180" />
@@ -102,7 +106,7 @@ const profileDetails = () => {
           <DisclosurePanel className="mt-2">No.</DisclosurePanel>
         </Disclosure>
 
-        <Disclosure as="div" className="p-6 border-b">
+        <Disclosure as="div" className="p-6 border-b text-start">
           <DisclosureButton className="group flex w-full items-center justify-between">
             <span className="font-medium">Notes</span>
             <MdOutlineKeyboardArrowDown className="size-5 group-data-[open]:rotate-180" />

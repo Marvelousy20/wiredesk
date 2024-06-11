@@ -1,6 +1,7 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import { LuPanelRightClose } from "react-icons/lu";
 import ProfileDetails from "./ProfileDetails";
+import Attributes from "./Attributes";
 
 interface ItemProps {
   isCollapsed: boolean;
@@ -46,7 +47,9 @@ export default function Details({ isCollapsed, onCollapseToggle }: ItemProps) {
               <TabPanel>
                 <ProfileDetails />
               </TabPanel>
-              <TabPanel>Content 2</TabPanel>
+              <TabPanel>
+                <Attributes />
+              </TabPanel>
             </TabPanels>
           </TabGroup>
         </div>

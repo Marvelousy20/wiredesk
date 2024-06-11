@@ -1,5 +1,6 @@
 import Image from "next/image";
 import MessageCard from "./MessageCard";
+import OrderDropdown from "../General/OrderDropwdown";
 
 const MessagesInbox = () => {
   return (
@@ -21,6 +22,18 @@ const MessagesInbox = () => {
             width={24}
             height={24}
           />
+        </div>
+      </div>
+
+      <div className="px-5">
+        <div className="flex justify-between w-full">
+          <div className="flex items-center">
+            <span className="bg-[#2325290D] bg-opacity-5 text-sm rounded-full">
+              8
+            </span>
+            <OrderDropdown title="Open" />
+          </div>
+          <OrderDropdown title="Oldest" />
         </div>
       </div>
 

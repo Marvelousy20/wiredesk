@@ -3,30 +3,29 @@ import { useState } from "react";
 import { Transition } from "@headlessui/react";
 import { ChevronUp, ChevronDown } from "lucide-react";
 
-interface DropdownProps {
+interface OrderDropwdownProps {
   title?: string;
   items?: any;
 }
 
-const Dropdown = ({ title, items }: DropdownProps) => {
+const OrderDropdown = ({ title, items }: OrderDropwdownProps) => {
   const [isOpen, setIsOpen] = useState(true);
 
   console.log(isOpen);
 
   return (
-    <div className="w-full">
+    <div className="">
       <button
         className="flex justify-between items-center w-full p-2 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex items-center gap-2">
+          <span className="text-[0.75rem]">{title}</span>
+
           <span>
             {isOpen ? <ChevronDown size={15} /> : <ChevronUp size={15} />}
           </span>
-          <span className="text-[0.75rem]">{title}</span>
         </div>
-
-        <div>...</div>
       </button>
 
       <Transition
@@ -50,4 +49,4 @@ const Dropdown = ({ title, items }: DropdownProps) => {
   );
 };
 
-export default Dropdown;
+export default OrderDropdown;
