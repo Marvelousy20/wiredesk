@@ -32,6 +32,8 @@ export default function MainContent() {
         <Message
           isCollapsedSidebar={isDetailedSidebarCollapsed}
           isRightSidebarCollapsed={isSidebarCollapsed}
+          isCollapsed={isSidebarCollapsed}
+          onCollapseToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
         />
       </div>
       <Details

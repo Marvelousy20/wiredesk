@@ -1,12 +1,19 @@
 import Image from "next/image";
 import MessageCard from "./MessageCard";
 import OrderDropdown from "../General/OrderDropwdown";
+import { LuPanelLeftClose } from "react-icons/lu";
 
 interface MessageInboxProps {
   isCollapsedSidebar: boolean;
+  onCollapseToggle: () => void;
+  isCollapsed: boolean;
 }
 
-const MessagesInbox = ({ isCollapsedSidebar }: MessageInboxProps) => {
+const MessagesInbox = ({
+  isCollapsedSidebar,
+  onCollapseToggle,
+  isCollapsed,
+}: MessageInboxProps) => {
   return (
     <section>
       <div
@@ -14,7 +21,19 @@ const MessagesInbox = ({ isCollapsedSidebar }: MessageInboxProps) => {
           isCollapsedSidebar ? "pr-5" : "px-5"
         }`}
       >
-        <h1 className="font-semibold text-lg">Inbox</h1>
+        <div className={`flex items-center gap-5 ${isCollapsed ? "px-5" : ""}`}>
+          <button
+            onClick={onCollapseToggle}
+            className={
+              isCollapsed
+                ? "flex w-full justify-center left-2 items-center"
+                : "w-full hidden justify-end"
+            }
+          >
+            <LuPanelLeftClose size={20} />
+          </button>
+          <h1 className="font-semibold text-lg">Inbox</h1>
+        </div>
 
         <div className="flex items-center gap-2">
           <Image
@@ -33,7 +52,7 @@ const MessagesInbox = ({ isCollapsedSidebar }: MessageInboxProps) => {
         </div>
       </div>
 
-      <div className={isCollapsedSidebar ? "pr-5" : "px-5"}>
+      <div className="px-5">
         <div className="flex justify-between w-full">
           <div className="flex items-center">
             <span className="bg-[#2325290D] bg-opacity-5 text-sm rounded-full">

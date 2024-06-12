@@ -4,15 +4,30 @@ import MessagesInbox from "./MessageInbox";
 interface MessageProps {
   isCollapsedSidebar: boolean;
   isRightSidebarCollapsed: boolean;
+  isCollapsed: boolean;
+  onCollapseToggle: () => void;
 }
 
-export default function Message({ isCollapsedSidebar, isRightSidebarCollapsed }: MessageProps) {
+export default function Message({
+  isCollapsedSidebar,
+  isRightSidebarCollapsed,
+  isCollapsed,
+  onCollapseToggle,
+}: MessageProps) {
   return (
     <section className="w-full h-full flex">
-      <div className="w-[35%] border-r h-full">
-        <MessagesInbox isCollapsedSidebar={isRightSidebarCollapsed} />
+      <div className={`border-r h-full ${isCollapsed ? "w-[30%]" : "w-[35%]"}`}>
+        <MessagesInbox
+          isCollapsed={isCollapsed}
+          isCollapsedSidebar={isRightSidebarCollapsed}
+          onCollapseToggle={onCollapseToggle}
+        />
       </div>
-      <div className={`w-[65%] h-full ${isCollapsedSidebar ? "" : "border-r"}`}>
+      <div
+        className={`${isCollapsed ? "w-[70%]" : "w-[65%]"} h-full ${
+          isCollapsedSidebar ? "" : "border-r"
+        }`}
+      >
         <MessageDetails />
       </div>
     </section>

@@ -46,12 +46,12 @@ export default function Sidebar({
   return (
     <section
       className={` ${
-        isCollapsed ? "w-[8%]" : "w-[20%] border-r-2 bg-[#FBFBFB]"
+        isCollapsed ? "w-[5%]" : "w-[20%] border-r-2 bg-[#FBFBFB]"
       }`}
     >
       {/* <div className="grid grid-cols-6 h-full"> */}
       <div className="flex w-full h-full">
-        <div className={`border-r-2 ${isCollapsed ? "w-[50%]" : "w-[20%]"}`}>
+        <div className={`border-r-2 ${isCollapsed ? "w-[100%]" : "w-[20%]"}`}>
           <div className="shadow-bottom h-16 px-3 flex items-center justify-center">
             <Image src="/sidebar/logo.svg" alt="logo" width={30} height={30} />
           </div>
@@ -169,10 +169,10 @@ export default function Sidebar({
         </div>
 
         {/* Corresponding items */}
-        <div className={`h-full ${isCollapsed ? "w-[50%]" : "w-[80%]"}`}>
+        <div className={`h-full ${isCollapsed ? "w-[0%]" : "w-[80%]"}`}>
           {/* <div className={`border-r-2 bg-[#FBFBFB] transition-all duration-300`}> */}
           <div
-            className={`h-16 shadow-bottom flex items-center justify-between ${
+            className={`h-16 shadow-bottom flex items-center justify-between relative ${
               isCollapsed ? "w-full" : "px-10"
             }`}
           >
@@ -188,7 +188,7 @@ export default function Sidebar({
               onClick={onCollapseToggle}
               className={
                 isCollapsed
-                  ? "flex w-full justify-center"
+                  ? "w-full justify-center absolute left-2 items-center hidden"
                   : "w-full flex justify-end"
               }
             >
