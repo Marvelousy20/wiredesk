@@ -44,10 +44,10 @@ const profileDetails = () => {
         </div>
       </div>
 
-      <div className="bg-[#F4f4f4] w-full mt-6 py-4 text-[0.75rem] text-start space-y-5 flex flex-col lg:px-10">
+      <div className="bg-[#F4f4f4] w-full mt-6 py-4 text-[0.75rem] text-start space-y-5 flex flex-col lg:px-7">
         <div className="flex justify-between w-full">
-          <h1 className="">Assignee:</h1>
-          <div className="flex gap-1">
+          <h1 className="w-1/2">Assignee:</h1>
+          <div className="flex gap-1 w-1/2">
             <Image
               src="/messages/s-avatar.svg"
               alt="avatar"
@@ -58,9 +58,9 @@ const profileDetails = () => {
           </div>
         </div>
 
-        <div className="flex w-full justify-between">
-          <h1 className="">Team:</h1>
-          <div className="flex gap-1">
+        <div className="flex justify-between">
+          <h1 className="w-1/2">Team:</h1>
+          <div className="flex gap-1 w-1/2">
             <span>🧰</span>
             <h1>Tier/Support</h1>
           </div>
