@@ -2,10 +2,18 @@ import Image from "next/image";
 import MessageCard from "./MessageCard";
 import OrderDropdown from "../General/OrderDropwdown";
 
-const MessagesInbox = () => {
+interface MessageInboxProps {
+  isCollapsedSidebar: boolean;
+}
+
+const MessagesInbox = ({ isCollapsedSidebar }: MessageInboxProps) => {
   return (
     <section>
-      <div className="h-16 shadow-bottom flex items-center justify-between px-5">
+      <div
+        className={`h-16 shadow-bottom flex items-center justify-between ${
+          isCollapsedSidebar ? "pr-5" : "px-5"
+        }`}
+      >
         <h1 className="font-semibold text-lg">Inbox</h1>
 
         <div className="flex items-center gap-2">
@@ -25,7 +33,7 @@ const MessagesInbox = () => {
         </div>
       </div>
 
-      <div className="px-5">
+      <div className={isCollapsedSidebar ? "pr-5" : "px-5"}>
         <div className="flex justify-between w-full">
           <div className="flex items-center">
             <span className="bg-[#2325290D] bg-opacity-5 text-sm rounded-full">

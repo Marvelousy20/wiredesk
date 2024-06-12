@@ -29,7 +29,10 @@ export default function MainContent() {
         onCollapseToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
       />
       <div className={`transition-all duration-300 ${getMessageWidth()}`}>
-        <Message isCollapsedSidebar={isDetailedSidebarCollapsed} />
+        <Message
+          isCollapsedSidebar={isDetailedSidebarCollapsed}
+          isRightSidebarCollapsed={isSidebarCollapsed}
+        />
       </div>
       <Details
         isCollapsed={isDetailedSidebarCollapsed}

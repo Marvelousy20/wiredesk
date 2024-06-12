@@ -46,7 +46,7 @@ export default function Sidebar({
   return (
     <section
       className={` ${
-        isCollapsed ? "w-[10%]" : "w-[20%] border-r-2 bg-[#FBFBFB]"
+        isCollapsed ? "w-[8%]" : "w-[20%] border-r-2 bg-[#FBFBFB]"
       }`}
     >
       {/* <div className="grid grid-cols-6 h-full"> */}
