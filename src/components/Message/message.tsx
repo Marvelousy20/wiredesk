@@ -15,7 +15,7 @@ export default function Message({
   onCollapseToggle,
 }: MessageProps) {
   return (
-    <section className="w-full h-full flex">
+    <section className="w-full h-full overflow-auto flex">
       <div className={`border-r h-full ${isCollapsed ? "w-[25%]" : "w-[35%]"}`}>
         <MessagesInbox
           isCollapsed={isCollapsed}
