@@ -67,7 +67,7 @@ const profileDetails = () => {
         </div>
       </div>
 
-      <div className="w-full px-8 text-[0.75rem] font-medium">
+      <div className="w-full px-6 text-[0.75rem] font-medium">
         <div className="flex items-center justify-between py-5">
           <h1>Add to Bulk Ticket</h1>
 

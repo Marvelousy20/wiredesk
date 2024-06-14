@@ -16,7 +16,7 @@ export default function Message({
 }: MessageProps) {
   return (
     <section className="w-full h-full flex">
-      <div className={`border-r h-full ${isCollapsed ? "w-[30%]" : "w-[35%]"}`}>
+      <div className={`border-r h-full ${isCollapsed ? "w-[25%]" : "w-[35%]"}`}>
         <MessagesInbox
           isCollapsed={isCollapsed}
           isCollapsedSidebar={isRightSidebarCollapsed}
@@ -24,7 +24,7 @@ export default function Message({
         />
       </div>
       <div
-        className={`${isCollapsed ? "w-[70%]" : "w-[65%]"} h-full ${
+        className={`${isCollapsed ? "w-[75%]" : "w-[65%]"} h-full ${
           isCollapsedSidebar ? "" : "border-r"
         }`}
       >

@@ -173,7 +173,7 @@ export default function Sidebar({
           {/* <div className={`border-r-2 bg-[#FBFBFB] transition-all duration-300`}> */}
           <div
             className={`h-16 shadow-bottom flex items-center justify-between relative ${
-              isCollapsed ? "w-full" : "px-10"
+              isCollapsed ? "w-full" : "px-2"
             }`}
           >
             <h1
@@ -181,7 +181,7 @@ export default function Sidebar({
                 isCollapsed ? "hidden" : "block"
               }`}
             >
-              WireDesk
+              <span className="font-normal">Wire</span>Desk
             </h1>
 
             <button

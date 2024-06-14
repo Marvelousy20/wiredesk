@@ -71,6 +71,7 @@ const MessagesInbox = ({
           status="Sent"
           time="12:15 PM"
           platform="/messages/Whatsapp.svg"
+          unread={8}
         />
         <MessageCard
           img="/messages/i-avatar.svg"

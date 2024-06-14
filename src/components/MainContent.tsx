@@ -12,7 +12,7 @@ export default function MainContent() {
 
   const getMessageWidth = () => {
     if (isSidebarCollapsed && isDetailedSidebarCollapsed) {
-      return "w-[85%]";
+      return "w-[90%]";
     } else if (isSidebarCollapsed || isDetailedSidebarCollapsed) {
       return "w-[75%]";
     } else {

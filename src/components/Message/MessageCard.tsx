@@ -35,7 +35,11 @@ const MessageCard = ({
 
         <div className="flex justify-between">
           <h1 className="text-sm font-medium">{status}</h1>
-          <small>{unread}</small>
+          {unread && (
+            <span className="bg-black font-medium text-white p-1 text-[0.75rem] w-3 h-4 flex items-center justify-center rounded-md">
+              {unread}
+            </span>
+          )}
         </div>
       </div>
     </div>

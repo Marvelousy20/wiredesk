@@ -39,9 +39,9 @@ const MessageDetails = () => {
             </div>
 
             <div className="flex gap-x-6 items-center">
-              <span className="text-2xl font-bold">...</span>
+              <span className="text-2xl mb-2 font-bold">...</span>
 
-              <span>
+              <span className="">
                 <MdOutlinePersonAddAlt size={24} />
               </span>
               <span>
