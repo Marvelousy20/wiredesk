@@ -169,7 +169,9 @@ export default function Sidebar({
         </div>
 
         {/* Corresponding items */}
-        <div className={`overflow-auto ${isCollapsed ? "w-[0%]" : "w-[80%]"}`}>
+        <div
+          className={`overflow-scroll ${isCollapsed ? "w-[0%]" : "w-[80%]"}`}
+        >
           {/* <div className={`border-r-2 bg-[#FBFBFB] transition-all duration-300`}> */}
           <div className="h-16 sticky top-0 z-20 bg-[#FBFBFB]">
             <div

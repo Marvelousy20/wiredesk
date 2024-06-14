@@ -163,7 +163,7 @@ export default function Inbox() {
   const [selectedInbox, setSelectedInbox] = useState("Inbox");
 
   return (
-    <div>
+    <div className="mb-20">
       <div className="">
         {messages.map((message, id) => (
           <div
