@@ -1,7 +1,7 @@
 import Image from "next/image";
 import MessageCard from "./MessageCard";
 import OrderDropdown from "../General/OrderDropwdown";
-import { LuPanelLeftClose } from "react-icons/lu";
+import { LuPanelRightClose } from "react-icons/lu";
 
 interface MessageInboxProps {
   isCollapsedSidebar: boolean;
@@ -30,7 +30,7 @@ const MessagesInbox = ({
                 : "w-full hidden justify-end"
             }
           >
-            <LuPanelLeftClose size={20} />
+            <LuPanelRightClose size={20} />
           </button>
           <h1 className="font-semibold text-lg">Inbox</h1>
         </div>

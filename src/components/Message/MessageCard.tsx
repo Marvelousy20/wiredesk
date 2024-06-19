@@ -40,7 +40,7 @@ const MessageCard = ({
               {unread}
             </span>
           )}
-        </div>
+        </div> 
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import { LuPanelRightClose } from "react-icons/lu";
+import { LuPanelRightClose, LuPanelRightOpen } from "react-icons/lu";
 import ProfileDetails from "./ProfileDetails";
 import Attributes from "./Attributes";
 
@@ -40,7 +40,11 @@ export default function Details({ isCollapsed, onCollapseToggle }: ItemProps) {
                 }`}
                 onClick={onCollapseToggle}
               >
-                <LuPanelRightClose size={20} />
+                {isCollapsed ? (
+                  <LuPanelRightOpen size={20} />
+                ) : (
+                  <LuPanelRightClose size={20} />
+                )}
               </button>
             </div>
             <TabPanels className={isCollapsed ? "hidden" : "block"}>

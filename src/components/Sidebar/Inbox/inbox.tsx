@@ -4,11 +4,7 @@ import { Mail, AtSign, UserX } from "lucide-react";
 import Dropdown from "@/components/General/Dropdown";
 import { useState } from "react";
 import Image from "next/image";
-import {
-  MdOutlineAlternateEmail,
-  MdOutlineInbox,
-  MdOutlineWhatsapp,
-} from "react-icons/md";
+import { MdOutlineAlternateEmail, MdOutlineInbox } from "react-icons/md";
 
 const messages = [
   {

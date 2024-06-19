@@ -1,11 +1,19 @@
+"use client";
 import Image from "next/image";
 import {
   MdOutlinePersonAddAlt,
   MdOutlineGrade,
   MdOutlinePhoneInTalk,
+  MdOutlineSnooze,
+  MdOutlineArchive,
+  MdOutlineUnarchive,
 } from "react-icons/md";
+import { Button } from "@headlessui/react";
+import { useState } from "react";
 
 const MessageDetails = () => {
+  const [isOpen, setIsOpen] = useState(true);
+
   return (
     <section>
       <div className="h-16 shadow-bottom flex items-center justify-between px-5 w-full">
@@ -38,18 +46,36 @@ const MessageDetails = () => {
               />
             </div>
 
-            <div className="flex gap-x-6 items-center">
+            <div className="flex gap-x-3 items-center">
               <span className="text-2xl mb-2 font-bold">...</span>
 
-              <span className="">
+              <span className="hover:bg-[#EEEFF1] rounded-full p-1">
                 <MdOutlinePersonAddAlt size={24} />
               </span>
-              <span>
+              <span className="hover:bg-[#EEEFF1] rounded-full p-1">
                 <MdOutlineGrade size={24} />
               </span>
-              <span>
+              <span className="hover:bg-[#EEEFF1] rounded-full p-1">
                 <MdOutlinePhoneInTalk size={24} />
               </span>
+
+              <span className="hover:bg-[#EEEFF1] rounded-full p-1">
+                <MdOutlineSnooze size={24} />
+              </span>
+
+              <Button className="bg-black text-white p-2 text-sm rounded-md">
+                {isOpen ? (
+                  <span className="flex gap-2 items-center">
+                    <MdOutlineArchive size={20} />
+                    Close
+                  </span>
+                ) : (
+                  <span className="flex gap-2 items-center">
+                    <MdOutlineUnarchive size={20} />
+                    Re-open
+                  </span>
+                )}
+              </Button>
             </div>
           </div>
         </div>
