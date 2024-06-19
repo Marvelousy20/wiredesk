@@ -5,12 +5,20 @@ import Attributes from "./Attributes";
 
 interface ItemProps {
   isCollapsed: boolean;
+  width: string;
   onCollapseToggle: () => void;
 }
 
-export default function Details({ isCollapsed, onCollapseToggle }: ItemProps) {
+export default function Details({
+  isCollapsed,
+  onCollapseToggle,
+  width,
+}: ItemProps) {
   return (
-    <section className={`col-span-2 ${isCollapsed ? "w-[5%]" : "w-[20%]"}`}>
+    <section
+      className={`col-span-2 transition-all duration-300 ease-in-out`}
+      style={{ width }}
+    >
       <div className="relative">
         <div className="">
           <TabGroup className="">

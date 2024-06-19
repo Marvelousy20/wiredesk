@@ -21,6 +21,20 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      keyframes: {
+        slideIn: {
+          "0%": { width: "5%" },
+          "100%": { width: "20%" },
+        },
+        slideOut: {
+          "0%": { width: "20%" },
+          "100%": { width: "5%" },
+        },
+      },
+      animation: {
+        slideIn: "slideIn 0.5s ease-in-out forwards",
+        slideOut: "slideOut 0.5s ease-in-out forwards",
+      },
     },
   },
   plugins: [],

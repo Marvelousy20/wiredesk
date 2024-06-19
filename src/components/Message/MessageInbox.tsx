@@ -4,24 +4,22 @@ import OrderDropdown from "../General/OrderDropwdown";
 import { LuPanelRightClose } from "react-icons/lu";
 
 interface MessageInboxProps {
-  isCollapsedSidebar: boolean;
+  isCollapsedDetailsbar: boolean;
   onCollapseToggle: () => void;
   isCollapsed: boolean;
 }
 
 const MessagesInbox = ({
-  isCollapsedSidebar,
+  isCollapsedDetailsbar,
   onCollapseToggle,
   isCollapsed,
 }: MessageInboxProps) => {
   return (
     <section>
       <div
-        className={`h-16 shadow-bottom flex items-center justify-between ${
-          isCollapsedSidebar ? "pr-5" : "px-5"
-        }`}
+        className={`h-16 shadow-bottom flex items-center justify-between px-5`}
       >
-        <div className={`flex items-center gap-5 ${isCollapsed ? "px-5" : ""}`}>
+        <div className={`flex items-center gap-5`}>
           <button
             onClick={onCollapseToggle}
             className={

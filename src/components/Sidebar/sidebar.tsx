@@ -28,12 +28,14 @@ interface ItemProps {
   onSelect?: any;
   isCollapsed: boolean;
   onCollapseToggle: () => void;
+  width: string;
 }
 
 export default function Sidebar({
   onSelect,
   isCollapsed,
   onCollapseToggle,
+  width,
 }: ItemProps) {
   const [selected, setSelected] = useState<SelectableItems | string>(
     "messages"
@@ -45,18 +47,18 @@ export default function Sidebar({
   };
   return (
     <section
-      className={`${
-        isCollapsed ? "w-[5%]" : "w-[20%] border-r-2 bg-[#FBFBFB]"
-      } max-h-screen`}
+      className={`transition-all ease-in-out duration-300 ${
+        isCollapsed ? "animate-" : "border-r animate-slidn"
+      }`}
+      style={{ width }}
     >
-      {/* <div className="grid grid-cols-6 h-full"> */}
-      <div className="flex w-full h-full">
-        <div className={`border-r-2 ${isCollapsed ? "w-[100%]" : "w-[20%]"}`}>
-          <div className="shadow-bottom h-16 px-3 flex items-center">
+      <div className="flex w-full h-full justify-center">
+        <div className={`border-r ${isCollapsed ? "w-[100%]" : "w-[20%]"}`}>
+          <div className="shadow-bottom h-16 justify-center flex items-center">
             <Image src="/sidebar/logo.svg" alt="logo" width={30} height={30} />
           </div>
 
-          <div className="px-2 mt-2">
+          <div className="mt-2 flex flex-col items-center">
             <div className="">
               <button
                 onClick={() => handleSelect("messages")}
