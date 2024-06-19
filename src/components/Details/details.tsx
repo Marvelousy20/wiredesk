@@ -28,7 +28,7 @@ export default function Details({ isCollapsed, onCollapseToggle }: ItemProps) {
                   Details
                 </Tab>
                 <Tab className="data-[selected]:border-b-2 data-[selected]:outline-none border-black data-[selected]:opacity-100 opacity-75">
-                  Attributes
+                  Comments
                 </Tab>
               </TabList>
 

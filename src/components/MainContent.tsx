@@ -20,13 +20,12 @@ export default function MainContent() {
     }
   };
 
-  console.log(isDetailedSidebarCollapsed);
-
   return (
     <div className="w-full flex h-screen overflow-hidden">
       <Sidebar
         isCollapsed={isSidebarCollapsed}
         onCollapseToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
+        key={isSidebarCollapsed ? "collapsed" : "expanded"}
       />
 
       <div

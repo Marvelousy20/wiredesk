@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 import { ChevronUp, ChevronDown } from "lucide-react";
 
@@ -11,7 +11,10 @@ interface DropdownProps {
 const Dropdown = ({ title, items }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(true);
 
-  console.log(isOpen);
+  useEffect(() => {
+    // resets to open when the component is mounted or remounted.
+    setIsOpen(true);
+  }, []);
 
   return (
     <div className="w-full">

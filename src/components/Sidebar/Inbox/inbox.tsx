@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, AtSign, UserX } from "lucide-react";
+import { UserX } from "lucide-react";
 import Dropdown from "@/components/General/Dropdown";
 import { useState } from "react";
 import Image from "next/image";
