@@ -16,7 +16,7 @@ const Dropdown = ({ title, items }: DropdownProps) => {
   return (
     <div className="w-full">
       <button
-        className="flex justify-between items-center w-full p-2 focus:outline-none"
+        className="flex justify-between items-center w-full p-2 focus:outline-nones"
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex items-center gap-2">
@@ -40,7 +40,10 @@ const Dropdown = ({ title, items }: DropdownProps) => {
       >
         <div className="overflow-hidden">
           {items?.map((item: string, index: number) => (
-            <div key={index} className="pl-4 border-gray-300">
+            <div
+              key={index}
+              className="pl-4 border-gray-300 hover:bg-[#EEEFF1]"
+            >
               {item}
             </div>
           ))}

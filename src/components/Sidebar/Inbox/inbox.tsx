@@ -163,12 +163,12 @@ export default function Inbox() {
   const [selectedInbox, setSelectedInbox] = useState("Inbox");
 
   return (
-    <div className="mb-20">
+    <div className="h-full">
       <div className="">
         {messages.map((message, id) => (
           <div
             key={id}
-            className={`flex items-center justify-between p-2 opacity-75 ${
+            className={`flex items-center hover:bg-[#EEEFF1] justify-between p-2 opacity-75 ${
               selectedInbox === message.title &&
               "bg-[#EEEFF1] border-l-4 border-black opacity-100"
             }`}
@@ -273,6 +273,110 @@ export default function Inbox() {
       </div>
 
       {/* Channels */}
+      <div className="mt-4">
+        <Dropdown
+          title="Channels"
+          items={channels.map((channel, id) => (
+            <div
+              key={id}
+              className="flex justify-between items-center p-2 opacity-75"
+            >
+              <div className="flex items-center gap-1.5 text-sm font-medium">
+                <p>{channel.icon}</p>
+                <p>{channel.title}</p>
+              </div>
+
+              <p
+                className={`text-[0.75rem] ${
+                  selectedInbox === channel.title &&
+                  "bg-black px-1 rounded-md text-[#DB0629]"
+                }`}
+              >
+                {channel.unread}
+              </p>
+            </div>
+          ))}
+        />
+      </div>
+
+      <div className="mt-4">
+        <Dropdown
+          title="Channels"
+          items={channels.map((channel, id) => (
+            <div
+              key={id}
+              className="flex justify-between items-center p-2 opacity-75"
+            >
+              <div className="flex items-center gap-1.5 text-sm font-medium">
+                <p>{channel.icon}</p>
+                <p>{channel.title}</p>
+              </div>
+
+              <p
+                className={`text-[0.75rem] ${
+                  selectedInbox === channel.title &&
+                  "bg-black px-1 rounded-md text-[#DB0629]"
+                }`}
+              >
+                {channel.unread}
+              </p>
+            </div>
+          ))}
+        />
+      </div>
+
+      <div className="mt-4">
+        <Dropdown
+          title="Channels"
+          items={channels.map((channel, id) => (
+            <div
+              key={id}
+              className="flex justify-between items-center p-2 opacity-75"
+            >
+              <div className="flex items-center gap-1.5 text-sm font-medium">
+                <p>{channel.icon}</p>
+                <p>{channel.title}</p>
+              </div>
+
+              <p
+                className={`text-[0.75rem] ${
+                  selectedInbox === channel.title &&
+                  "bg-black px-1 rounded-md text-[#DB0629]"
+                }`}
+              >
+                {channel.unread}
+              </p>
+            </div>
+          ))}
+        />
+      </div>
+
+      <div className="mt-4">
+        <Dropdown
+          title="Channels"
+          items={channels.map((channel, id) => (
+            <div
+              key={id}
+              className="flex justify-between items-center p-2 opacity-75"
+            >
+              <div className="flex items-center gap-1.5 text-sm font-medium">
+                <p>{channel.icon}</p>
+                <p>{channel.title}</p>
+              </div>
+
+              <p
+                className={`text-[0.75rem] ${
+                  selectedInbox === channel.title &&
+                  "bg-black px-1 rounded-md text-[#DB0629]"
+                }`}
+              >
+                {channel.unread}
+              </p>
+            </div>
+          ))}
+        />
+      </div>
+
       <div className="mt-4">
         <Dropdown
           title="Channels"

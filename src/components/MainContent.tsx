@@ -23,15 +23,12 @@ export default function MainContent() {
   console.log(isDetailedSidebarCollapsed);
 
   return (
-    <div className="w-full flex h-screen overflow-hidden">
+    <div className="w-full flex max-h-screen overflow-hidden">
       <Sidebar
         isCollapsed={isSidebarCollapsed}
         onCollapseToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
       />
 
-      {/* <nav className="sticky top-0 h-16 shadow-bottom flex items-center">
-        <div>Sticks</div>
-      </nav> */}
       <div
         className={`transition-all overflow-auto duration-300 ${getMessageWidth()}`}
       >

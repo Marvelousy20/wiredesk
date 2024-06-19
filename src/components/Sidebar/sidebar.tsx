@@ -47,10 +47,10 @@ export default function Sidebar({
     <section
       className={`${
         isCollapsed ? "w-[5%]" : "w-[20%] border-r-2 bg-[#FBFBFB]"
-      }`}
+      } max-h-screen`}
     >
       {/* <div className="grid grid-cols-6 h-full"> */}
-      <div className="flex w-full">
+      <div className="flex w-full h-full">
         <div className={`border-r-2 ${isCollapsed ? "w-[100%]" : "w-[20%]"}`}>
           <div className="shadow-bottom h-16 px-3 flex items-center">
             <Image src="/sidebar/logo.svg" alt="logo" width={30} height={30} />
@@ -169,9 +169,7 @@ export default function Sidebar({
         </div>
 
         {/* Corresponding items */}
-        <div
-          className={`overflow-scroll ${isCollapsed ? "w-[0%]" : "w-[80%]"}`}
-        >
+        <div className={`${isCollapsed ? "w-[0%]" : "w-[80%]"} h-full`}>
           {/* <div className={`border-r-2 bg-[#FBFBFB] transition-all duration-300`}> */}
           <div className="h-16 sticky top-0 z-20 bg-[#FBFBFB]">
             <div
@@ -201,7 +199,9 @@ export default function Sidebar({
           </div>
 
           <div
-            className={`px-2 mt-2 h-full ${isCollapsed ? "hidden" : "block"}`}
+            className={` mt-2 h-full ${
+              isCollapsed ? "hidden" : "block"
+            } custom-scrollbar overflow-auto`}
           >
             {selected === "messages" && <Inbox />}
           </div>

@@ -18,7 +18,7 @@ const MessageCard = ({
   platform,
 }: MessagesCardProps) => {
   return (
-    <div className="flex gap-4 items-center w-full px-4 border-b py-5">
+    <div className="flex gap-4 items-center w-full px-4 border-b py-5 hover:bg-[#EEEFF1] cursor-pointer">
       <div className="relative">
         <Image src={img} alt="avatar" width={44} height={44} />
 
