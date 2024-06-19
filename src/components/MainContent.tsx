@@ -9,6 +9,12 @@ export default function MainContent() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isDetailedSidebarCollapsed, setIsDetailedSidebarCollapsed] =
     useState(false);
+  const [widths, setWidths] = useState({
+    sidebarWidth: "20%",
+    detailsWidth: "20%",
+    messageWidth: "60%",
+    firstChildWidth: "20%",
+  });
 
   const calculateWidths = () => {
     const totalWidth = window.innerWidth;
@@ -23,18 +29,17 @@ export default function MainContent() {
       ? 0.2 * totalWidth
       : detailsWidth;
 
-    return {
+    setWidths({
       sidebarWidth: `${sidebarWidth}px`,
       detailsWidth: `${detailsWidth}px`,
       messageWidth: `${messageWidth}px`,
       firstChildWidth: `${firstChildWidth}px`,
-    };
+    });
   };
 
-  const { sidebarWidth, detailsWidth, messageWidth, firstChildWidth } =
-    calculateWidths();
-
   useEffect(() => {
+    // Only run the calculation on the client side
+    calculateWidths();
     const handleResize = () => {
       calculateWidths();
     };
@@ -50,17 +55,17 @@ export default function MainContent() {
         isCollapsed={isSidebarCollapsed}
         onCollapseToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
         key={isSidebarCollapsed ? "collapsed" : "expanded"}
-        width={sidebarWidth}
+        width={widths.sidebarWidth}
       />
 
       <div
         className={`transition-all overflow-auto duration-300`}
-        style={{ width: messageWidth }}
+        style={{ width: widths.messageWidth }}
       >
         <Message
           isCollapsedDetailsbar={isDetailedSidebarCollapsed}
           onCollapseToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
-          detailsWidth={firstChildWidth}
+          detailsWidth={widths.firstChildWidth}
           isCollapsed={isSidebarCollapsed}
         />
       </div>
@@ -69,7 +74,7 @@ export default function MainContent() {
         onCollapseToggle={() =>
           setIsDetailedSidebarCollapsed(!isDetailedSidebarCollapsed)
         }
-        width={detailsWidth}
+        width={widths.detailsWidth}
       />
     </div>
   );
