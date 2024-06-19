@@ -4,31 +4,39 @@ import {
   MdEmail,
   MdAdd,
   MdOutlineKeyboardArrowDown,
+  MdOpenInNew,
 } from "react-icons/md";
 import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react";
+import MessageCard from "../Message/MessageCard";
 
 const profileDetails = () => {
   return (
     <section className="flex flex-col text-center items-center justify-center mt-5 w-full">
       <div className="relative">
-        <Image
-          src="/messages/i-avatar.svg"
-          alt="avatar"
-          width={45}
-          height={45}
-        />
+        <div className="relative flex">
+          <Image
+            src="/messages/i-avatar.svg"
+            alt="avatar"
+            width={45}
+            height={45}
+          />
 
-        {/* <Image
+          {/* <Image
           src="/messages/instagram.svg"
           alt="instagram"
           width={14}
           height={14}
           className="absolute top-full right-0"
         /> */}
+        </div>
+
+        <div className="absolute top-0 -right-20 cursor-pointer hover:bg-[#EEEFF1] rounded-full p-1">
+          <MdOpenInNew />
+        </div>
       </div>
 
       <div className="text-center">
@@ -54,7 +62,7 @@ const profileDetails = () => {
               width={18}
               height={18}
             />
-            <h1>Darwin Cooper</h1>
+            <h1 className="underline">Darwin Cooper</h1>
           </div>
         </div>
 
@@ -62,7 +70,7 @@ const profileDetails = () => {
           <h1 className="w-1/2">Team:</h1>
           <div className="flex gap-1 w-1/2">
             <span>🧰</span>
-            <h1>Tier/Support</h1>
+            <h1 className="underline">Tier/Support</h1>
           </div>
         </div>
       </div>
@@ -95,15 +103,16 @@ const profileDetails = () => {
             <span className="font-medium">Previous Conversations</span>
             <MdOutlineKeyboardArrowDown className="size-5 group-data-[open]:rotate-180" />
           </DisclosureButton>
-          <DisclosurePanel className="mt-2">No.</DisclosurePanel>
-        </Disclosure>
-
-        <Disclosure as="div" className="p-6 border-b text-start">
-          <DisclosureButton className="group flex w-full items-center justify-between">
-            <span className="font-medium">Previous Conversations</span>
-            <MdOutlineKeyboardArrowDown className="size-5 group-data-[open]:rotate-180" />
-          </DisclosureButton>
-          <DisclosurePanel className="mt-2">No.</DisclosurePanel>
+          <DisclosurePanel className="mt-2">
+            <MessageCard
+              img="/messages/w-avatar.svg"
+              name="James Books"
+              status="Sent"
+              time="12:15 PM"
+              platform="/messages/Whatsapp.svg"
+              unread={8}
+            />
+          </DisclosurePanel>
         </Disclosure>
 
         <Disclosure as="div" className="p-6 border-b text-start">

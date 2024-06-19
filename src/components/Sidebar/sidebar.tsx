@@ -58,7 +58,7 @@ export default function Sidebar({
             <Image src="/sidebar/logo.svg" alt="logo" width={30} height={30} />
           </div>
 
-          <div className="mt-2 flex flex-col items-center">
+          <div className="mt-2 flex flex-col items-center h-full pb-16">
             <div className="">
               <button
                 onClick={() => handleSelect("messages")}
@@ -140,19 +140,7 @@ export default function Sidebar({
               </button>
             </div>
 
-            <div>
-              <button
-                onClick={() => handleSelect("minus")}
-                className={`mb-5 p-2 ${
-                  selected === "minus" && "bg-black rounded-lg"
-                }`}
-              >
-                <MdOutlineRemove
-                  size={24}
-                  color={selected === "minus" ? "white" : ""}
-                />
-              </button>
-            </div>
+            <div className="flex-grow"></div>
 
             <div>
               <button
