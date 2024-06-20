@@ -51,7 +51,7 @@ const MessagesInbox = ({
       </div>
 
       <div className="pl-5 pr-3">
-        <div className="flex justify-between w-full">
+        <div className="flex justify-between w-full font-medium">
           <div className="flex items-center">
             <span className="bg-[#2325290D] bg-opacity-5 text-sm rounded-full">
               8
