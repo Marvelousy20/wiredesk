@@ -166,7 +166,7 @@ export default function Inbox() {
             key={id}
             className={`flex items-center hover:bg-[#EEEFF1] justify-between p-2 opacity-75 ${
               selectedInbox === message.title &&
-              "bg-[#EEEFF1] border-l-4 border-black opacity-100"
+              "bg-[#EEEFF1] border-l-4 border-black !opacity-100"
             }`}
             onClick={() => setSelectedInbox(message.title)}
           >

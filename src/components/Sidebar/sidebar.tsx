@@ -47,7 +47,7 @@ export default function Sidebar({
   };
   return (
     <section
-      className={`transition-width ease-in-out duration-300 ${
+      className={`transition-width ease-in-out duration-300 bg-[#FBFBFB] ${
         isCollapsed ? "animate-" : "border-r animate-slidn"
       }`}
       style={{ width }}
@@ -163,7 +163,7 @@ export default function Sidebar({
           {/* <div className={`border-r-2 bg-[#FBFBFB] transition-all duration-300`}> */}
           <div className="h-16 sticky top-0 z-20 bg-[#FBFBFB]">
             <div
-              className={`h-16 shadow-bottom flex items-center justify-between ${
+              className={`h-16 flex items-center justify-between ${
                 isCollapsed ? "w-full" : "px-2"
               }`}
             >
