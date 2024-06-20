@@ -159,7 +159,11 @@ export default function Sidebar({
         </div>
 
         {/* Corresponding items */}
-        <div className={`${isCollapsed ? "w-[0%]" : "w-[80%]"} h-full`}>
+        <div
+          className={`${
+            isCollapsed ? "w-[0%]" : "w-[80%]"
+          } h-full transition-all duration-300`}
+        >
           {/* <div className={`border-r-2 bg-[#FBFBFB] transition-all duration-300`}> */}
           <div className="h-16 sticky top-0 z-20">
             <div
