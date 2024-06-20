@@ -172,11 +172,11 @@ export default function Sidebar({
               }`}
             >
               <h1
-                className={`font-semibold text-xl ${
+                className={`font-bold text-xl ${
                   isCollapsed ? "hidden" : "block"
                 }`}
               >
-                <span className="font-normal">Wire</span>Desk
+                <span className="font-medium">Wire</span>Desk
               </h1>
 
               <button
