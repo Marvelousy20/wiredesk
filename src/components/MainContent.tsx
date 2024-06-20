@@ -9,12 +9,6 @@ export default function MainContent() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isDetailedSidebarCollapsed, setIsDetailedSidebarCollapsed] =
     useState(false);
-  const [widths, setWidths] = useState({
-    sidebarWidth: "20%",
-    detailsWidth: "20%",
-    messageWidth: "60%",
-    firstChildWidth: "20%",
-  });
 
   const calculateWidths = () => {
     const totalWidth = window.innerWidth;
@@ -25,28 +19,31 @@ export default function MainContent() {
       ? 0.04 * totalWidth
       : 0.2 * totalWidth;
     const messageWidth = totalWidth - sidebarWidth - detailsWidth;
-    const firstChildWidth = isDetailedSidebarCollapsed
-      ? 0.2 * totalWidth
-      : detailsWidth;
+    const firstChildWidth = 0.2 * totalWidth;
 
-    setWidths({
+    return {
       sidebarWidth: `${sidebarWidth}px`,
       detailsWidth: `${detailsWidth}px`,
       messageWidth: `${messageWidth}px`,
       firstChildWidth: `${firstChildWidth}px`,
-    });
+    };
   };
 
+  const [widths, setWidths] = useState(calculateWidths());
+
   useEffect(() => {
-    // Only run the calculation on the client side
-    calculateWidths();
     const handleResize = () => {
-      calculateWidths();
+      setWidths(calculateWidths());
     };
+
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
+  }, [isSidebarCollapsed, isDetailedSidebarCollapsed]);
+
+  useEffect(() => {
+    setWidths(calculateWidths());
   }, [isSidebarCollapsed, isDetailedSidebarCollapsed]);
 
   return (
@@ -59,7 +56,7 @@ export default function MainContent() {
       />
 
       <div
-        className={`transition-all overflow-auto duration-300`}
+        className={`transition-all overflow-auto duration-300 ease-out`}
         style={{ width: widths.messageWidth }}
       >
         <Message

@@ -47,7 +47,7 @@ export default function Sidebar({
   };
   return (
     <section
-      className={`transition-all ease-in-out duration-300 ${
+      className={`transition-width ease-in-out duration-300 ${
         isCollapsed ? "animate-" : "border-r animate-slidn"
       }`}
       style={{ width }}
