@@ -10,7 +10,17 @@ export default function MainContent() {
   const [isDetailedSidebarCollapsed, setIsDetailedSidebarCollapsed] =
     useState(false);
 
+  const [widths, setWidths] = useState({
+    sidebarWidth: "20%",
+    detailsWidth: "20%",
+    messageWidth: "60%",
+    firstChildWidth: "20%",
+  });
+
   const calculateWidths = () => {
+    if (typeof window === "undefined") {
+      return;
+    }
     const totalWidth = window.innerWidth;
     const sidebarWidth = isSidebarCollapsed
       ? 0.04 * totalWidth
@@ -21,29 +31,24 @@ export default function MainContent() {
     const messageWidth = totalWidth - sidebarWidth - detailsWidth;
     const firstChildWidth = 0.2 * totalWidth;
 
-    return {
+    setWidths({
       sidebarWidth: `${sidebarWidth}px`,
       detailsWidth: `${detailsWidth}px`,
       messageWidth: `${messageWidth}px`,
       firstChildWidth: `${firstChildWidth}px`,
-    };
+    });
   };
 
-  const [widths, setWidths] = useState(calculateWidths());
-
   useEffect(() => {
+    calculateWidths();
     const handleResize = () => {
-      setWidths(calculateWidths());
+      calculateWidths();
     };
 
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [isSidebarCollapsed, isDetailedSidebarCollapsed]);
-
-  useEffect(() => {
-    setWidths(calculateWidths());
   }, [isSidebarCollapsed, isDetailedSidebarCollapsed]);
 
   return (
