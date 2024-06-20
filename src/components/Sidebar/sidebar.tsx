@@ -161,7 +161,7 @@ export default function Sidebar({
         {/* Corresponding items */}
         <div className={`${isCollapsed ? "w-[0%]" : "w-[80%]"} h-full`}>
           {/* <div className={`border-r-2 bg-[#FBFBFB] transition-all duration-300`}> */}
-          <div className="h-16 sticky top-0 z-20 bg-[#FBFBFB]">
+          <div className="h-16 sticky top-0 z-20">
             <div
               className={`h-16 flex items-center justify-between ${
                 isCollapsed ? "w-full" : "px-2"
