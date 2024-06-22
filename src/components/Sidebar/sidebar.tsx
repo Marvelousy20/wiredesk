@@ -28,14 +28,13 @@ interface ItemProps {
   onSelect?: any;
   isCollapsed: boolean;
   onCollapseToggle: () => void;
-  width: string;
+  // width: string;
 }
 
 export default function Sidebar({
   onSelect,
   isCollapsed,
   onCollapseToggle,
-  width,
 }: ItemProps) {
   const [selected, setSelected] = useState<SelectableItems | string>(
     "messages"
@@ -47,13 +46,16 @@ export default function Sidebar({
   };
   return (
     <section
-      className={`transition-width ease-in-out duration-300 bg-[#FBFBFB] ${
-        isCollapsed ? "animate-" : "border-r animate-slidn"
+      className={`transition-width ease-in-out duration-300 bg-[#FBFBFB] column-a ${
+        isCollapsed ? "w-[3.571%]" : "w-[18.187%]"
       }`}
-      style={{ width }}
     >
       <div className="flex w-full h-full justify-center">
-        <div className={`border-r ${isCollapsed ? "w-[100%]" : "w-[20%]"}`}>
+        <div
+          className={`border-r column-a1 ${
+            isCollapsed ? "w-full" : "w-[19.635%] "
+          }`}
+        >
           <div className="shadow-bottom h-16 justify-center flex items-center">
             <Image src="/sidebar/logo.svg" alt="logo" width={30} height={30} />
           </div>
@@ -159,12 +161,12 @@ export default function Sidebar({
         </div>
 
         {/* Corresponding items */}
+
         <div
-          className={`${
-            isCollapsed ? "w-[0%]" : "w-[80%]"
-          } h-full transition-all duration-300`}
+          className={`h-full transition-all duration-300 column-a2 ${
+            isCollapsed ? "w-0" : "w-[80.365%]"
+          }`}
         >
-          {/* <div className={`border-r-2 bg-[#FBFBFB] transition-all duration-300`}> */}
           <div className="h-16 sticky top-0 z-20">
             <div
               className={`h-16 flex items-center justify-between ${
@@ -193,9 +195,9 @@ export default function Sidebar({
           </div>
 
           <div
-            className={` mt-2 h-full ${
+            className={`w-full mt-2 h-full ${
               isCollapsed ? "hidden" : "block"
-            } custom-scrollbar overflow-auto`}
+            } overflow-auto custom-scrollbar p-[5px]`}
           >
             {selected === "messages" && <Inbox />}
           </div>

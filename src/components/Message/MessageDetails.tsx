@@ -10,8 +10,17 @@ import {
 } from "react-icons/md";
 import { Button } from "@headlessui/react";
 import { useState } from "react";
+import { LuPanelRightClose } from "react-icons/lu";
 
-const MessageDetails = () => {
+interface MessageDetailsProps {
+  isCollapsedDetailsbar: boolean;
+  onCollapseToggle: () => void;
+}
+
+const MessageDetails = ({
+  isCollapsedDetailsbar,
+  onCollapseToggle,
+}: MessageDetailsProps) => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
@@ -55,9 +64,6 @@ const MessageDetails = () => {
               <span className="hover:bg-[#EEEFF1] rounded-full p-1">
                 <MdOutlineGrade size={24} />
               </span>
-              <span className="hover:bg-[#EEEFF1] rounded-full p-1">
-                <MdOutlinePhoneInTalk size={24} />
-              </span>
 
               <span className="hover:bg-[#EEEFF1] rounded-full p-1">
                 <MdOutlineSnooze size={24} />
@@ -77,6 +83,12 @@ const MessageDetails = () => {
                 )}
               </Button>
             </div>
+
+            {isCollapsedDetailsbar && (
+              <div className="cursor-pointer" onClick={onCollapseToggle}>
+                <LuPanelRightClose size={20} />
+              </div>
+            )}
           </div>
         </div>
       </div>
