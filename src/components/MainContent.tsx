@@ -10,64 +10,42 @@ export default function MainContent() {
   const [isDetailedSidebarCollapsed, setIsDetailedSidebarCollapsed] =
     useState(false);
 
-  const [widths, setWidths] = useState({
-    sidebarWidth: "20%",
-    detailsWidth: "20%",
-    messageWidth: "60%",
-    firstChildWidth: "20%",
-  });
+  const getMessageWidth = () => {
+    let defaultWidth = "58.796%";
 
-  const calculateWidths = () => {
-    if (typeof window === "undefined") {
-      return;
+    if (isSidebarCollapsed) {
+      defaultWidth = "73.412%";
     }
-    const totalWidth = window.innerWidth;
-    const sidebarWidth = isSidebarCollapsed
-      ? 0.04 * totalWidth
-      : 0.2 * totalWidth;
-    const detailsWidth = isDetailedSidebarCollapsed
-      ? 0.04 * totalWidth
-      : 0.2 * totalWidth;
-    const messageWidth = totalWidth - sidebarWidth - detailsWidth;
-    const firstChildWidth = 0.2 * totalWidth;
+    if (isDetailedSidebarCollapsed) {
+      defaultWidth = "81.872%";
+    }
+    if (isDetailedSidebarCollapsed && isSidebarCollapsed) {
+      defaultWidth = "96.429%";
+    }
 
-    setWidths({
-      sidebarWidth: `${sidebarWidth}px`,
-      detailsWidth: `${detailsWidth}px`,
-      messageWidth: `${messageWidth}px`,
-      firstChildWidth: `${firstChildWidth}px`,
-    });
+    console.log(defaultWidth);
+
+    return defaultWidth;
   };
 
-  useEffect(() => {
-    calculateWidths();
-    const handleResize = () => {
-      calculateWidths();
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [isSidebarCollapsed, isDetailedSidebarCollapsed]);
-
   return (
-    <div className="w-full flex h-screen overflow-hidden">
+    <div className={`w-full flex h-screen overflow-hidden`}>
       <Sidebar
         isCollapsed={isSidebarCollapsed}
         onCollapseToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
         key={isSidebarCollapsed ? "collapsed" : "expanded"}
-        width={widths.sidebarWidth}
+        // width={widths.sidebarWidth}
       />
-
       <div
-        className={`transition-all overflow-auto duration-300 ease-out`}
-        style={{ width: widths.messageWidth }}
+        className={`transition-all overflow-auto duration-300 ease-out column-b [58.796%]`}
+        style={{ width: getMessageWidth() }}
       >
         <Message
           isCollapsedDetailsbar={isDetailedSidebarCollapsed}
           onCollapseToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
-          detailsWidth={widths.firstChildWidth}
+          onDetailsCollapseToggle={() =>
+            setIsDetailedSidebarCollapsed(!isDetailedSidebarCollapsed)
+          }
           isCollapsed={isSidebarCollapsed}
         />
       </div>
@@ -76,7 +54,6 @@ export default function MainContent() {
         onCollapseToggle={() =>
           setIsDetailedSidebarCollapsed(!isDetailedSidebarCollapsed)
         }
-        width={widths.detailsWidth}
       />
     </div>
   );
