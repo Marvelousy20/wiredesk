@@ -197,7 +197,7 @@ export default function Sidebar({
           <div
             className={`w-full mt-2 h-full ${
               isCollapsed ? "hidden" : "block"
-            } overflow-auto custom-scrollbar p-[5px]`}
+            } overflow-hidden hover:overflow-auto custom-scrollbar pr-[5px] hover:pr-[0]`}
           >
             {selected === "messages" && <Inbox />}
           </div>

@@ -10,17 +10,17 @@ const messages = [
   {
     title: "Inbox",
     unread: "2,055",
-    icon: <MdOutlineInbox size={16} />,
+    icon: <MdOutlineInbox size={20} />,
   },
   {
     title: "Mentions",
     unread: "30",
-    icon: <MdOutlineAlternateEmail size={16} />,
+    icon: <MdOutlineAlternateEmail size={20} />,
   },
   {
     title: "Unassigned",
     unread: "48",
-    icon: <UserX size={16} />,
+    icon: <UserX size={20} />,
   },
 ];
 
