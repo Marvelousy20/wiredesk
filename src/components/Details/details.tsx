@@ -11,17 +11,14 @@ interface ItemProps {
   onCollapseToggle: () => void;
 }
 
-export default function Details({
-  isCollapsed,
-  onCollapseToggle,
-  width,
-}: ItemProps) {
+export default function Details({ isCollapsed, onCollapseToggle }: ItemProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
     <section
-      className={`col-span-2 transition-all duration-300 ease-in-out`}
-      style={{ width }}
+      className={`col-span-2 transition-all duration-300 ease-in-out column-c ${
+        isCollapsed ? "w-0" : "w-[23.076%]"
+      }`}
     >
       <div className="relative">
         <div className="">

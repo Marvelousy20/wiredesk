@@ -10,8 +10,17 @@ import {
 } from "react-icons/md";
 import { Button } from "@headlessui/react";
 import { useState } from "react";
+import { LuPanelRightClose } from "react-icons/lu";
 
-const MessageDetails = () => {
+interface MessageDetailsProps {
+  isCollapsedDetailsbar: boolean;
+  onCollapseToggle: () => void;
+}
+
+const MessageDetails = ({
+  isCollapsedDetailsbar,
+  onCollapseToggle,
+}: MessageDetailsProps) => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
@@ -25,10 +34,10 @@ const MessageDetails = () => {
               width={25}
               height={25}
             />
-            <h1 className="font-semibold text-lg">James Books</h1>
+            <h1 className="font-semibold lg:text-lg">James Books</h1>
           </div>
 
-          <div className="flex items-center gap-10">
+          <div className="flex items-center gap-x-3">
             <div className="relative">
               <Image
                 src="/messages/w-avatar.svg"
@@ -47,16 +56,13 @@ const MessageDetails = () => {
             </div>
 
             <div className="flex gap-x-3 items-center">
-              <span className="text-2xl mb-2 font-bold">...</span>
+              <span className="text-lg lg:text-2xl mb-2 font-bold">...</span>
 
               <span className="hover:bg-[#EEEFF1] rounded-full p-1">
                 <MdOutlinePersonAddAlt size={24} />
               </span>
               <span className="hover:bg-[#EEEFF1] rounded-full p-1">
                 <MdOutlineGrade size={24} />
-              </span>
-              <span className="hover:bg-[#EEEFF1] rounded-full p-1">
-                <MdOutlinePhoneInTalk size={24} />
               </span>
 
               <span className="hover:bg-[#EEEFF1] rounded-full p-1">
@@ -77,6 +83,12 @@ const MessageDetails = () => {
                 )}
               </Button>
             </div>
+
+            {isCollapsedDetailsbar && (
+              <div className="cursor-pointer" onClick={onCollapseToggle}>
+                <LuPanelRightClose size={20} />
+              </div>
+            )}
           </div>
         </div>
       </div>
