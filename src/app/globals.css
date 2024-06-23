@@ -121,3 +121,31 @@ body {
 .collapsed-a.collapsed-c .column-b2 {
   width: calc(37.5% + 14.616% + 23.076%);
 } */
+
+/* .border-l-custom {
+  @apply border-l-4 border-black;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+} */
+
+.container {
+  position: relative;
+  /* padding-left: 20px; */
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #232529;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.content {
+  background: #fff;
+  padding: 10px;
+}

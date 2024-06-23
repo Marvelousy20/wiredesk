@@ -174,7 +174,7 @@ export default function Sidebar({
               }`}
             >
               <h1
-                className={`font-bold text-xl ${
+                className={`font-bold lg:text-xl ${
                   isCollapsed ? "hidden" : "block"
                 }`}
               >
