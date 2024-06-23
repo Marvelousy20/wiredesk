@@ -34,7 +34,6 @@ export default function MainContent() {
         isCollapsed={isSidebarCollapsed}
         onCollapseToggle={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
         key={isSidebarCollapsed ? "collapsed" : "expanded"}
-        // width={widths.sidebarWidth}
       />
       <div
         className={`transition-all overflow-auto duration-300 ease-out column-b [58.796%]`}

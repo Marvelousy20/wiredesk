@@ -7,7 +7,6 @@ import Attributes from "./Attributes";
 
 interface ItemProps {
   isCollapsed: boolean;
-  width: string;
   onCollapseToggle: () => void;
 }
 
