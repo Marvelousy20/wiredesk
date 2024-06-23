@@ -38,7 +38,7 @@ const MessageCard = ({
             {status}
           </h1>
           {unread && (
-            <span className="bg-[#000] opacity-75 font-medium text-white p-1 text-[0.75rem] w-4 h-4 flex items-center justify-center rounded-md">
+            <span className="bg-[#232529] font-medium text-white text-[0.75rem] w-4 h-4 flex items-center justify-center rounded-md">
               {unread}
             </span>
           )}

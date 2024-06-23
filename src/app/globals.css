@@ -37,16 +37,12 @@ body {
 
 /* Hide scrollbar by default */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+  width: 5px;
+  height: 5px;
   transition: width 0.3s, height 0.3s; /* Add transition for scrollbar width/height */
 }
 
 /* Show scrollbar on hover */
-.custom-scrollbar:hover::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
 
 /* Scrollbar track */
 .custom-scrollbar::-webkit-scrollbar-track {
@@ -64,9 +60,6 @@ body {
 }
 
 /* Scrollbar thumb on hover */
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -128,3 +121,31 @@ body {
 .collapsed-a.collapsed-c .column-b2 {
   width: calc(37.5% + 14.616% + 23.076%);
 } */
+
+/* .border-l-custom {
+  @apply border-l-4 border-black;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+} */
+
+.container {
+  position: relative;
+  /* padding-left: 20px; */
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #232529;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.content {
+  background: #fff;
+  padding: 10px;
+}

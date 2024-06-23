@@ -31,11 +31,11 @@ ItemProps) {
                 }`}
               >
                 <TabList
-                  className={`justify-between font-semibold text-lg ${
+                  className={`justify-between font-semibold lg:text-lg ${
                     isCollapsed ? "hidden" : "flex w-[85%]"
                   }`}
                 >
-                  <Tab className="data-[selected]:border-b-2 data-[selected]:outline-none  border-black data-[selected]:opacity-100 opacity-75">
+                  <Tab className="data-[selected]:border-b-2 data-[selected]:outline-none border-black data-[selected]:opacity-100 opacity-75">
                     Details
                   </Tab>
                   <Tab className="data-[selected]:border-b-2 data-[selected]:outline-none border-black data-[selected]:opacity-100 opacity-75">

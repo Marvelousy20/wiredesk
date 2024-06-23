@@ -10,17 +10,17 @@ const messages = [
   {
     title: "Inbox",
     unread: "2,055",
-    icon: <MdOutlineInbox size={16} />,
+    icon: <MdOutlineInbox size={20} />,
   },
   {
     title: "Mentions",
     unread: "30",
-    icon: <MdOutlineAlternateEmail size={16} />,
+    icon: <MdOutlineAlternateEmail size={20} />,
   },
   {
     title: "Unassigned",
     unread: "48",
-    icon: <UserX size={16} />,
+    icon: <UserX size={20} />,
   },
 ];
 
@@ -164,25 +164,27 @@ export default function Inbox() {
         {messages.map((message, id) => (
           <div
             key={id}
-            className={`flex items-center hover:bg-[#EEEFF1] justify-between p-2 opacity-75 ${
+            className={`flex items-center hover:bg-[#EEEFF1] justify-between p-2 opacity-75 cursor-pointer ${
               selectedInbox === message.title &&
-              "bg-[#EEEFF1] border-l-4 border-black !opacity-100"
+              "bg-[#EEEFF1] !opacity-100 rounded-tr-lg border-black rounded-r-[3px] container"
             }`}
             onClick={() => setSelectedInbox(message.title)}
           >
-            <div className="flex items-center gap-1.5 text-sm font-medium">
-              <p>{message.icon}</p>
-              <p>{message.title}</p>
-            </div>
+            <div className="flex justify-between w-full">
+              <div className="flex items-center gap-1.5 text-sm font-medium">
+                <p>{message.icon}</p>
+                <p>{message.title}</p>
+              </div>
 
-            <p
-              className={`text-[0.75rem] ${
-                selectedInbox === message.title &&
-                "bg-black text-white px-1 rounded-md"
-              }`}
-            >
-              {message.unread}
-            </p>
+              <p
+                className={`text-[0.75rem] ${
+                  selectedInbox === message.title &&
+                  "bg-black text-white px-1 rounded-md"
+                }`}
+              >
+                {message.unread}
+              </p>
+            </div>
           </div>
         ))}
       </div>
