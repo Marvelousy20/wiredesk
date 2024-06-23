@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import { LuPanelRightClose, LuPanelRightOpen } from "react-icons/lu";
 import ProfileDetails from "./ProfileDetails";
@@ -14,6 +16,8 @@ export default function Details({
   onCollapseToggle,
   width,
 }: ItemProps) {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
   return (
     <section
       className={`col-span-2 transition-all duration-300 ease-in-out`}
@@ -21,7 +25,11 @@ export default function Details({
     >
       <div className="relative">
         <div className="">
-          <TabGroup className="">
+          <TabGroup
+            selectedIndex={selectedIndex}
+            onChange={setSelectedIndex}
+            className=""
+          >
             <div
               className={`h-16 shadow-bottom w-full flex items-center shadow-b-2 ${
                 isCollapsed ? "" : "px-8"
@@ -32,10 +40,18 @@ export default function Details({
                   isCollapsed ? "hidden" : "flex w-[85%]"
                 }`}
               >
-                <Tab className="data-[selected]:border-b-2 data-[selected]:outline-none  border-black data-[selected]:opacity-100 opacity-75">
+                <Tab
+                  className={`data-[selected]:outline-none relative border-black data-[selected]:opacity-100 opacity-75 ${
+                    selectedIndex === 0 && "tab-selected"
+                  }`}
+                >
                   Details
                 </Tab>
-                <Tab className="data-[selected]:border-b-2 data-[selected]:outline-none border-black data-[selected]:opacity-100 opacity-75">
+                <Tab
+                  className={`data-[selected]:outline-none relative border-black data-[selected]:opacity-100 opacity-75 ${
+                    selectedIndex === 1 && "tab-selected"
+                  }`}
+                >
                   Comments
                 </Tab>
               </TabList>
