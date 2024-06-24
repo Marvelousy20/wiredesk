@@ -51,8 +51,8 @@ const MessagesInbox = ({
         </div>
       </div>
 
-      <div className="pl-5 pr-3">
-        <div className="flex justify-between w-full font-medium">
+      <div className="pl-5 pr-3 mt-2">
+        <div className="flex justify-between w-full font-semibold">
           <div className="flex items-center">
             <span className="bg-[#2325290D] bg-opacity-5 text-sm rounded-full">
               8
@@ -63,7 +63,7 @@ const MessagesInbox = ({
         </div>
       </div>
 
-      <div className="w-full mt-2">
+      <div className="w-full">
         <MessageCard
           img="/messages/w-avatar.svg"
           name="James Books"
