@@ -2,6 +2,7 @@ import Image from "next/image";
 import MessageCard from "./MessageCard";
 import OrderDropdown from "../General/OrderDropwdown";
 import { LuPanelRightClose } from "react-icons/lu";
+import { FiSearch } from "react-icons/fi";
 
 interface MessageInboxProps {
   isCollapsedDetailsbar: boolean;
@@ -37,8 +38,8 @@ const MessagesInbox = ({
           <Image
             src="/messages/search.svg"
             alt="search"
-            width={18}
-            height={18}
+            width={24}
+            height={24}
           />
 
           <Image

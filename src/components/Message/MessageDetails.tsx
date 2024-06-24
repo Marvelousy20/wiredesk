@@ -26,7 +26,7 @@ const MessageDetails = ({
   return (
     <section>
       <div className="h-16 shadow-bottom flex items-center justify-between px-5 w-full">
-        <div className="flex justify-between items-center w-full">
+        <div className="flex justify-between items-center w-full bg-red-500">
           <div className="flex gap-2">
             <Image
               src="/messages/w-avatar.svg"
@@ -58,15 +58,15 @@ const MessageDetails = ({
             <div className="flex gap-x-3 items-center">
               <span className="text-lg lg:text-2xl mb-2 font-bold">...</span>
 
-              <span className="hover:bg-[#EEEFF1] rounded-full p-1">
-                <MdOutlinePersonAddAlt size={24} />
+              <span className="hover:bg-[#EEEFF1] rounded-sm p-1">
+                <MdOutlinePersonAddAlt size={20} />
               </span>
-              <span className="hover:bg-[#EEEFF1] rounded-full p-1">
-                <MdOutlineGrade size={24} />
+              <span className="hover:bg-[#EEEFF1] rounded-sm p-1">
+                <MdOutlineGrade size={20} />
               </span>
 
-              <span className="hover:bg-[#EEEFF1] rounded-full p-1">
-                <MdOutlineSnooze size={24} />
+              <span className="hover:bg-[#EEEFF1] rounded-sm p-1">
+                <MdOutlineSnooze size={20} />
               </span>
 
               <Button className="bg-black text-white p-1.5 px-2 text-sm rounded-md">

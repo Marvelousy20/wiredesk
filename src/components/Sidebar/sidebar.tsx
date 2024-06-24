@@ -65,7 +65,9 @@ export default function Sidebar({
               <button
                 onClick={() => handleSelect("messages")}
                 className={`mb-5 p-2 ${
-                  selected === "messages" && "bg-black rounded-lg"
+                  selected === "messages"
+                    ? "bg-black rounded-lg"
+                    : "hover:bg-[#EEEFF1] rounded-sm"
                 }`}
               >
                 <MdOutlineMarkEmailUnread
@@ -79,10 +81,17 @@ export default function Sidebar({
               <button
                 onClick={() => handleSelect("mylo")}
                 className={`mb-5 p-2 ${
-                  selected === "mylo" && "bg-black rounded-lg"
+                  selected === "mylo"
+                    ? "bg-black rounded-lg"
+                    : "hover:bg-[#EEEFF1] rounded-sm"
                 }`}
               >
-                <BsStars size={24} color={selected === "mylo" ? "white" : ""} />
+                <Image
+                  src="/sidebar/navigation.svg"
+                  alt="navigation"
+                  width={24}
+                  height={24}
+                />
               </button>
             </div>
 
@@ -90,7 +99,9 @@ export default function Sidebar({
               <button
                 onClick={() => handleSelect("support")}
                 className={`mb-5 p-2 ${
-                  selected === "support" && "bg-black rounded-lg"
+                  selected === "support"
+                    ? "bg-black rounded-lg"
+                    : "hover:bg-[#EEEFF1] rounded-sm"
                 }`}
               >
                 <MdOutlineGroups
@@ -104,7 +115,9 @@ export default function Sidebar({
               <button
                 onClick={() => handleSelect("campaign")}
                 className={`mb-5 p-2 ${
-                  selected === "campaign" && "bg-black rounded-lg"
+                  selected === "campaign"
+                    ? "bg-black rounded-lg"
+                    : "hover:bg-[#EEEFF1] rounded-sm"
                 }`}
               >
                 <MdOutlineCampaign
@@ -118,7 +131,9 @@ export default function Sidebar({
               <button
                 onClick={() => handleSelect("finance")}
                 className={`mb-5 p-2 ${
-                  selected === "finance" && "bg-black rounded-lg"
+                  selected === "finance"
+                    ? "bg-black rounded-lg"
+                    : "hover:bg-[#EEEFF1] rounded-sm"
                 }`}
               >
                 <MdBarChart
@@ -132,7 +147,9 @@ export default function Sidebar({
               <button
                 onClick={() => handleSelect("settings")}
                 className={`mb-5 p-2 ${
-                  selected === "settings" && "bg-black rounded-lg"
+                  selected === "settings"
+                    ? "bg-black rounded-lg"
+                    : "hover:bg-[#EEEFF1] rounded-sm"
                 }`}
               >
                 <MdOutlineSettings
@@ -148,7 +165,9 @@ export default function Sidebar({
               <button
                 onClick={() => handleSelect("mylo_last")}
                 className={`mb-5 p-2 ${
-                  selected === "mylo_last" && "bg-black rounded-lg"
+                  selected === "mylo_last"
+                    ? "bg-black rounded-lg"
+                    : "hover:bg-[#EEEFF1] rounded-sm"
                 }`}
               >
                 <MdOutlineSchool
