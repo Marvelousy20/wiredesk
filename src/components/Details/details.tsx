@@ -32,7 +32,7 @@ export default function Details({ isCollapsed, onCollapseToggle }: ItemProps) {
               }`}
             >
               <TabList
-                className={`justify-between font-semibold text-lg ${
+                className={`justify-between font-bold text-lg ${
                   isCollapsed ? "hidden" : "flex w-[85%]"
                 }`}
               >

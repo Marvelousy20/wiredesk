@@ -159,7 +159,7 @@ export default function Inbox() {
   const [selectedInbox, setSelectedInbox] = useState("Inbox");
 
   return (
-    <div className="h-full">
+    <div className="h-full font-bold">
       <div className="">
         {messages.map((message, id) => (
           <div
@@ -171,7 +171,7 @@ export default function Inbox() {
             onClick={() => setSelectedInbox(message.title)}
           >
             <div className="flex justify-between w-full">
-              <div className="flex items-center gap-1.5 text-sm font-medium">
+              <div className="flex items-center gap-1.5 text-sm">
                 <p>{message.icon}</p>
                 <p>{message.title}</p>
               </div>
@@ -198,7 +198,7 @@ export default function Inbox() {
               key={id}
               className="flex justify-between items-center p-2 opacity-75"
             >
-              <div className="flex items-center gap-1.5 text-sm font-medium">
+              <div className="flex items-center gap-1.5 text-sm font-bold">
                 <p>{team.icon}</p>
                 <p>{team.title}</p>
               </div>
@@ -225,7 +225,7 @@ export default function Inbox() {
               key={id}
               className="flex justify-between items-center p-2 opacity-75"
             >
-              <div className="flex items-center gap-1.5 text-sm font-medium">
+              <div className="flex items-center gap-1.5 text-sm font-bold">
                 <p>{teammate.icon}</p>
                 <p>{teammate.title}</p>
               </div>
@@ -252,7 +252,7 @@ export default function Inbox() {
               key={id}
               className="flex justify-between items-center p-2 opacity-75"
             >
-              <div className="flex items-center gap-1.5 text-sm font-medium">
+              <div className="flex items-center gap-1.5 text-sm font-bold">
                 <p>{ticket.icon}</p>
                 <p>{ticket.title}</p>
               </div>
@@ -279,7 +279,7 @@ export default function Inbox() {
               key={id}
               className="flex justify-between items-center p-2 opacity-75"
             >
-              <div className="flex items-center gap-1.5 text-sm font-medium">
+              <div className="flex items-center gap-1.5 text-sm font-bold">
                 <p>{channel.icon}</p>
                 <p>{channel.title}</p>
               </div>
@@ -305,7 +305,7 @@ export default function Inbox() {
               key={id}
               className="flex justify-between items-center p-2 opacity-75"
             >
-              <div className="flex items-center gap-1.5 text-sm font-medium">
+              <div className="flex items-center gap-1.5 text-sm font-bold">
                 <p>{channel.icon}</p>
                 <p>{channel.title}</p>
               </div>
@@ -331,7 +331,7 @@ export default function Inbox() {
               key={id}
               className="flex justify-between items-center p-2 opacity-75"
             >
-              <div className="flex items-center gap-1.5 text-sm font-medium">
+              <div className="flex items-center gap-1.5 text-sm font-bold">
                 <p>{channel.icon}</p>
                 <p>{channel.title}</p>
               </div>
@@ -357,7 +357,7 @@ export default function Inbox() {
               key={id}
               className="flex justify-between items-center p-2 opacity-75"
             >
-              <div className="flex items-center gap-1.5 text-sm font-medium">
+              <div className="flex items-center gap-1.5 text-sm font-bold">
                 <p>{channel.icon}</p>
                 <p>{channel.title}</p>
               </div>
@@ -383,7 +383,7 @@ export default function Inbox() {
               key={id}
               className="flex justify-between items-center p-2 opacity-75"
             >
-              <div className="flex items-center gap-1.5 text-sm font-medium">
+              <div className="flex items-center gap-1.5 text-sm font-bold">
                 <p>{channel.icon}</p>
                 <p>{channel.title}</p>
               </div>

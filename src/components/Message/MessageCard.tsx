@@ -18,7 +18,7 @@ const MessageCard = ({
   platform,
 }: MessagesCardProps) => {
   return (
-    <div className="flex gap-4 items-center w-full px-4 border-b py-5 hover:bg-[#EEEFF1] cursor-pointer">
+    <div className="flex gap-4 items-center w-full px-4 border-b py-5 hover:bg-[#EEEFF1] cursor-pointer font-bold">
       <div className="relative">
         <Image src={img} alt="avatar" width={60} height={60} />
 
@@ -34,11 +34,11 @@ const MessageCard = ({
         </div>
 
         <div className="flex justify-between">
-          <h1 className="text-sm font-medium text-[#37352F] opacity-75">
+          <h1 className="text-sm font-bold text-[#37352F] opacity-75">
             {status}
           </h1>
           {unread && (
-            <span className="bg-[#232529] font-medium text-white text-[0.75rem] w-4 h-4 flex items-center justify-center rounded-md">
+            <span className="bg-[#232529] font-bold text-white text-[0.75rem] w-4 h-4 flex items-center justify-center rounded-md">
               {unread}
             </span>
           )}
