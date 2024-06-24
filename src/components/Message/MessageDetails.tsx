@@ -3,7 +3,7 @@ import Image from "next/image";
 import {
   MdOutlinePersonAddAlt,
   MdOutlineGrade,
-  MdOutlinePhoneInTalk,
+  MdOutlineMoreHoriz,
   MdOutlineSnooze,
   MdOutlineArchive,
   MdOutlineUnarchive,
@@ -26,7 +26,7 @@ const MessageDetails = ({
   return (
     <section>
       <div className="h-16 shadow-bottom flex items-center justify-between px-5 w-full">
-        <div className="flex justify-between items-center w-full bg-red-500">
+        <div className="flex justify-between items-center w-full">
           <div className="flex gap-2">
             <Image
               src="/messages/w-avatar.svg"
@@ -56,7 +56,9 @@ const MessageDetails = ({
             </div>
 
             <div className="flex gap-x-3 items-center">
-              <span className="text-lg lg:text-2xl mb-2 font-bold">...</span>
+              <span className="text-lg lg:text-2xl font-bold">
+                <MdOutlineMoreHoriz size={24} />
+              </span>
 
               <span className="hover:bg-[#EEEFF1] rounded-sm p-1">
                 <MdOutlinePersonAddAlt size={20} />

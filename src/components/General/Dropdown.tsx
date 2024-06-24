@@ -26,7 +26,7 @@ const Dropdown = ({ title, items }: DropdownProps) => {
           <span>
             {isOpen ? <ChevronDown size={15} /> : <ChevronUp size={15} />}
           </span>
-          <span className="text-[0.75rem] font-medium">{title}</span>
+          <span className="text-[0.75rem] font-semibold">{title}</span>
         </div>
 
         <div>...</div>
