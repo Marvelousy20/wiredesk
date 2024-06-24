@@ -40,7 +40,7 @@ const profileDetails = () => {
       </div>
 
       <div className="text-center">
-        <h1 className="text-sm font-medium mt-2">James Books</h1>
+        <h1 className="text-sm font-bold mt-2">James Books</h1>
         <p className="opacity-75 text-[0.75rem] mt-1">Springfield, USA</p>
 
         <div className="flex items-center gap-2 opacity-75 text-[0.75rem] mt-2 justify-center">
@@ -75,7 +75,7 @@ const profileDetails = () => {
         </div>
       </div>
 
-      <div className="w-full px-6 text-[0.75rem] font-medium">
+      <div className="w-full px-6 text-[0.75rem] font-bold">
         <div className="flex items-center justify-between py-5">
           <h1>Add to Bulk Ticket</h1>
 
@@ -93,17 +93,17 @@ const profileDetails = () => {
         </div>
       </div>
 
-      <div className="w-full text-[0.75rem] font-medium">
+      <div className="w-full text-[0.75rem] font-bold">
         <Disclosure
           as="div"
           className="p-6 border-b text-start"
           defaultOpen={true}
         >
           <DisclosureButton className="group flex w-full items-center justify-between">
-            <span className="font-medium">Previous Conversations</span>
+            <span className="font-bold">Previous Conversations</span>
             <MdOutlineKeyboardArrowDown className="size-5 group-data-[open]:rotate-180" />
           </DisclosureButton>
-          <DisclosurePanel className="mt-2">
+          <DisclosurePanel className="mt-2 font-bold">
             <MessageCard
               img="/messages/w-avatar.svg"
               name="James Books"
@@ -117,7 +117,7 @@ const profileDetails = () => {
 
         <Disclosure as="div" className="p-6 border-b text-start">
           <DisclosureButton className="group flex w-full items-center justify-between">
-            <span className="font-medium">Notes</span>
+            <span className="font-bold">Notes</span>
             <MdOutlineKeyboardArrowDown className="size-5 group-data-[open]:rotate-180" />
           </DisclosureButton>
           <DisclosurePanel className="mt-2">No.</DisclosurePanel>

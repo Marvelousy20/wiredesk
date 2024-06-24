@@ -17,16 +17,16 @@ const Dropdown = ({ title, items }: DropdownProps) => {
   }, []);
 
   return (
-    <div className="w-full mr-6">
+    <div className="w-full mr-6 font-bold">
       <button
-        className="flex justify-between items-center w-full p-2 focus:outline-nones"
+        className="flex justify-between items-center w-full p-2 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex items-center gap-2">
           <span>
             {isOpen ? <ChevronDown size={15} /> : <ChevronUp size={15} />}
           </span>
-          <span className="text-[0.75rem] font-semibold">{title}</span>
+          <span className="text-[0.75rem]">{title}</span>
         </div>
 
         <div>...</div>
