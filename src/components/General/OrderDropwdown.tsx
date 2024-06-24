@@ -14,7 +14,7 @@ const OrderDropdown = ({ title, items }: OrderDropwdownProps) => {
   console.log(isOpen);
 
   return (
-    <div className="">
+    <div className="font-bold">
       <button
         className="flex justify-between items-center w-full p-2 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}

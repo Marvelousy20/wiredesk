@@ -29,7 +29,7 @@ const MessageCard = ({
 
       <div className="w-full grid gap-y-1">
         <div className="flex justify-between">
-          <h1 className="font-semibold text-sm text-[#232529]">{name}</h1>
+          <h1 className="font-bold text-sm text-[#232529]">{name}</h1>
           <small className="text-[#37352FBF] opacity-75">{time}</small>
         </div>
 
