@@ -62,7 +62,7 @@ const attributes = [
 const Attributes = () => {
   return (
     <section className="px-9 mt-4">
-      <div className="flex justify-end font-medium text-sm">
+      <div className="flex justify-end font-bold text-sm">
         <button className="flex items-center border rounded-md px-2.5 py-1.5">
           <MdAdd size={15} /> Add Attribute
         </button>
