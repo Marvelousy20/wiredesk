@@ -17,7 +17,7 @@ const Dropdown = ({ title, items }: DropdownProps) => {
   }, []);
 
   return (
-    <div className="w-full mr-6 font-bold">
+    <div className="w-full mr-6 font-medium">
       <button
         className="flex justify-between items-center w-full p-2 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
