@@ -74,7 +74,7 @@ const MessageDetails = ({
               <Button className="bg-black text-white p-1.5 px-2 text-sm rounded-md">
                 {isOpen ? (
                   <span className="flex gap-1 items-center">
-                    <MdOutlineArchive size={24} />
+                    <MdOutlineArchive size={20} />
                     Close
                   </span>
                 ) : (

@@ -192,7 +192,11 @@ export default function Sidebar({
                 isCollapsed ? "w-full" : "px-2"
               }`}
             >
-              <h1 className={`lg:text-xl ${isCollapsed ? "hidden" : "block"}`}>
+              <h1
+                className={`lg:text-xl font-bold ${
+                  isCollapsed ? "hidden" : "block"
+                }`}
+              >
                 <span className="font-medium">Wire</span>Desk
               </h1>
 
