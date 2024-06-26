@@ -186,7 +186,7 @@ export default function Sidebar({
             isCollapsed ? "w-0" : "w-[80.365%]"
           }`}
         >
-          <div className="h-16 sticky top-0 z-20">
+          <div className="h-16 sticky top-0 z-20" onClick={onCollapseToggle}>
             <div
               className={`h-16 flex items-center justify-between ${
                 isCollapsed ? "w-full" : "px-2"
@@ -201,7 +201,6 @@ export default function Sidebar({
               </h1>
 
               <button
-                onClick={onCollapseToggle}
                 className={
                   isCollapsed
                     ? "w-full justify-center absolute left-2 items-center hidden"
