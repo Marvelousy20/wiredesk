@@ -40,7 +40,7 @@ const profileDetails = () => {
       </div>
 
       <div className="text-center">
-        <h1 className="text-sm font-bold mt-2">James Books</h1>
+        <h1 className="text-sm font-medium mt-2">James Books</h1>
         <p className="opacity-75 text-[0.75rem] mt-1">Springfield, USA</p>
 
         <div className="flex items-center gap-2 opacity-75 text-[0.75rem] mt-2 justify-center">
@@ -53,7 +53,7 @@ const profileDetails = () => {
       </div>
 
       <div className="bg-[#F4f4f4] w-full mt-6 py-4 text-[0.75rem] text-start space-y-5 flex flex-col lg:px-7">
-        <div className="flex justify-between w-full">
+        <div className="flex justify-between w-full font-semibold">
           <h1 className="w-1/2">Assignee:</h1>
           <div className="flex gap-1 w-1/2">
             <Image
@@ -66,7 +66,7 @@ const profileDetails = () => {
           </div>
         </div>
 
-        <div className="flex justify-between">
+        <div className="flex justify-between font-semibold">
           <h1 className="w-1/2">Team:</h1>
           <div className="flex gap-1 w-1/2">
             <span>🧰</span>
@@ -75,8 +75,8 @@ const profileDetails = () => {
         </div>
       </div>
 
-      <div className="w-full px-6 text-[0.75rem] font-bold">
-        <div className="flex items-center justify-between py-5">
+      <div className="w-full px-6 text-[0.75rem]">
+        <div className="flex items-center justify-between py-5 font-semibold">
           <h1>Add to Bulk Ticket</h1>
 
           <button>
@@ -84,7 +84,7 @@ const profileDetails = () => {
           </button>
         </div>
 
-        <div className="flex items-center justify-between py-5">
+        <div className="flex items-center justify-between py-5 font-semibold">
           <h1>Create Team Ticket</h1>
 
           <button>
@@ -93,17 +93,17 @@ const profileDetails = () => {
         </div>
       </div>
 
-      <div className="w-full text-[0.75rem] font-bold">
+      <div className="w-full text-[0.75rem] font-semibold">
         <Disclosure
           as="div"
           className="p-6 border-b text-start"
           defaultOpen={true}
         >
           <DisclosureButton className="group flex w-full items-center justify-between">
-            <span className="font-bold">Previous Conversations</span>
+            <span className="font-semibold">Previous Conversations</span>
             <MdOutlineKeyboardArrowDown className="size-5 group-data-[open]:rotate-180" />
           </DisclosureButton>
-          <DisclosurePanel className="mt-2 font-bold">
+          <DisclosurePanel className="mt-2 font-semibold">
             <MessageCard
               img="/messages/w-avatar.svg"
               name="James Books"
@@ -117,7 +117,7 @@ const profileDetails = () => {
 
         <Disclosure as="div" className="p-6 border-b text-start">
           <DisclosureButton className="group flex w-full items-center justify-between">
-            <span className="font-bold">Notes</span>
+            <span className="font-semibold">Notes</span>
             <MdOutlineKeyboardArrowDown className="size-5 group-data-[open]:rotate-180" />
           </DisclosureButton>
           <DisclosurePanel className="mt-2">No.</DisclosurePanel>
