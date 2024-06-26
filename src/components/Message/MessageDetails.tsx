@@ -34,7 +34,7 @@ const MessageDetails = ({
               width={25}
               height={25}
             />
-            <h1 className="font-bold lg:text-lg">James Books</h1>
+            <h1 className="font-semibold lg:text-lg">James Books</h1>
           </div>
 
           <div className="flex items-center gap-x-3">
@@ -56,25 +56,25 @@ const MessageDetails = ({
             </div>
 
             <div className="flex gap-x-3 items-center">
-              <span className="text-lg lg:text-2xl font-bold">
+              <span className="hover:bg-[#EEEFF1] rounded-[10px] p-1">
                 <MdOutlineMoreHoriz size={24} />
               </span>
 
-              <span className="hover:bg-[#EEEFF1] rounded-sm p-1">
-                <MdOutlinePersonAddAlt size={20} />
+              <span className="hover:bg-[#EEEFF1] rounded-[10px] p-1">
+                <MdOutlinePersonAddAlt size={24} />
               </span>
-              <span className="hover:bg-[#EEEFF1] rounded-sm p-1">
-                <MdOutlineGrade size={20} />
+              <span className="hover:bg-[#EEEFF1] rounded-[10px] p-1">
+                <MdOutlineGrade size={24} />
               </span>
 
-              <span className="hover:bg-[#EEEFF1] rounded-sm p-1">
-                <MdOutlineSnooze size={20} />
+              <span className="hover:bg-[#EEEFF1] rounded-[10px] p-1">
+                <MdOutlineSnooze size={24} />
               </span>
 
               <Button className="bg-black text-white p-1.5 px-2 text-sm rounded-md">
                 {isOpen ? (
                   <span className="flex gap-1 items-center">
-                    <MdOutlineArchive size={20} />
+                    <MdOutlineArchive size={24} />
                     Close
                   </span>
                 ) : (

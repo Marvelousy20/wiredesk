@@ -159,12 +159,12 @@ export default function Inbox() {
   const [selectedInbox, setSelectedInbox] = useState("Inbox");
 
   return (
-    <div className="h-full font-bold">
+    <div className="h-full">
       <div className="">
         {messages.map((message, id) => (
           <div
             key={id}
-            className={`flex items-center hover:bg-[#EEEFF1] justify-between p-2 opacity-75 cursor-pointer ${
+            className={`flex items-center hover:bg-[#EEEFF1] justify-between p-2 opacity-75 cursor-pointer font-medium ${
               selectedInbox === message.title &&
               "bg-[#EEEFF1] !opacity-100 rounded-tr-lg border-black rounded-r-[3px] container"
             }`}
@@ -179,7 +179,7 @@ export default function Inbox() {
               <p
                 className={`text-[0.75rem] ${
                   selectedInbox === message.title &&
-                  "bg-black text-white px-1 rounded-md"
+                  "bg-black text-white px-1 rounded-md flex items-center"
                 }`}
               >
                 {message.unread}
@@ -194,13 +194,10 @@ export default function Inbox() {
         <Dropdown
           title="Teams"
           items={teams.map((team, id) => (
-            <div
-              key={id}
-              className="flex justify-between items-center p-2 opacity-75"
-            >
-              <div className="flex items-center gap-1.5 text-sm font-bold">
+            <div key={id} className="flex justify-between items-center p-2">
+              <div className="flex items-center gap-1.5 text-sm font-medium">
                 <p>{team.icon}</p>
-                <p>{team.title}</p>
+                <p className="opacity-75">{team.title}</p>
               </div>
 
               <p
@@ -221,13 +218,10 @@ export default function Inbox() {
         <Dropdown
           title="Teammates"
           items={teamsmates.map((teammate, id) => (
-            <div
-              key={id}
-              className="flex justify-between items-center p-2 opacity-75"
-            >
-              <div className="flex items-center gap-1.5 text-sm font-bold">
+            <div key={id} className="flex justify-between items-center p-2">
+              <div className="flex items-center gap-1.5 text-sm font-medium">
                 <p>{teammate.icon}</p>
-                <p>{teammate.title}</p>
+                <p className="opacity-75">{teammate.title}</p>
               </div>
 
               <p
@@ -248,13 +242,10 @@ export default function Inbox() {
         <Dropdown
           title="Tickets"
           items={tickets.map((ticket, id) => (
-            <div
-              key={id}
-              className="flex justify-between items-center p-2 opacity-75"
-            >
-              <div className="flex items-center gap-1.5 text-sm font-bold">
+            <div key={id} className="flex justify-between items-center p-2">
+              <div className="flex items-center gap-1.5 text-sm font-medium">
                 <p>{ticket.icon}</p>
-                <p>{ticket.title}</p>
+                <p className="opacity-75">{ticket.title}</p>
               </div>
 
               <p
@@ -279,9 +270,9 @@ export default function Inbox() {
               key={id}
               className="flex justify-between items-center p-2 opacity-75"
             >
-              <div className="flex items-center gap-1.5 text-sm font-bold">
+              <div className="flex items-center gap-1.5 text-sm font-medium">
                 <p>{channel.icon}</p>
-                <p>{channel.title}</p>
+                <p className="opacity-75">{channel.title}</p>
               </div>
 
               <p
@@ -301,13 +292,10 @@ export default function Inbox() {
         <Dropdown
           title="Channels"
           items={channels.map((channel, id) => (
-            <div
-              key={id}
-              className="flex justify-between items-center p-2 opacity-75"
-            >
-              <div className="flex items-center gap-1.5 text-sm font-bold">
+            <div key={id} className="flex justify-between items-center p-2">
+              <div className="flex items-center gap-1.5 text-sm font-medium">
                 <p>{channel.icon}</p>
-                <p>{channel.title}</p>
+                <p className="opacity-75">{channel.title}</p>
               </div>
 
               <p
@@ -327,13 +315,10 @@ export default function Inbox() {
         <Dropdown
           title="Channels"
           items={channels.map((channel, id) => (
-            <div
-              key={id}
-              className="flex justify-between items-center p-2 opacity-75"
-            >
-              <div className="flex items-center gap-1.5 text-sm font-bold">
+            <div key={id} className="flex justify-between items-center p-2">
+              <div className="flex items-center gap-1.5 text-sm font-medium">
                 <p>{channel.icon}</p>
-                <p>{channel.title}</p>
+                <p className="opacity-75">{channel.title}</p>
               </div>
 
               <p
@@ -353,13 +338,10 @@ export default function Inbox() {
         <Dropdown
           title="Channels"
           items={channels.map((channel, id) => (
-            <div
-              key={id}
-              className="flex justify-between items-center p-2 opacity-75"
-            >
-              <div className="flex items-center gap-1.5 text-sm font-bold">
+            <div key={id} className="flex justify-between items-center p-2">
+              <div className="flex items-center gap-1.5 text-sm font-medium">
                 <p>{channel.icon}</p>
-                <p>{channel.title}</p>
+                <p className=" font-medium">{channel.title}</p>
               </div>
 
               <p
@@ -379,13 +361,10 @@ export default function Inbox() {
         <Dropdown
           title="Channels"
           items={channels.map((channel, id) => (
-            <div
-              key={id}
-              className="flex justify-between items-center p-2 opacity-75"
-            >
-              <div className="flex items-center gap-1.5 text-sm font-bold">
+            <div key={id} className="flex justify-between items-center p-2">
+              <div className="flex items-center gap-1.5 text-sm font-medium">
                 <p>{channel.icon}</p>
-                <p>{channel.title}</p>
+                <p className="opacity-75">{channel.title}</p>
               </div>
 
               <p
