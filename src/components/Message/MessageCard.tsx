@@ -29,16 +29,14 @@ const MessageCard = ({
 
       <div className="w-full grid gap-y-1">
         <div className="flex justify-between">
-          <h1 className="font-medium text-sm text-[#232529]">{name}</h1>
-          <small className="text-[#37352FBF] opacity-75">{time}</small>
+          <h1 className="font-medium text-sm text-black">{name}</h1>
+          <small className="text-[#37352FBF] text-black">{time}</small>
         </div>
 
         <div className="flex justify-between">
-          <h1 className="text-sm font-medium text-[#37352F] opacity-75">
-            {status}
-          </h1>
+          <h1 className="text-sm font-medium text-blackInactive">{status}</h1>
           {unread && (
-            <span className="bg-[#232529] font-medium text-white text-[0.75rem] w-4 h-4 flex items-center justify-center rounded-md">
+            <span className="bg-black font-medium text-white text-[0.75rem] w-4 h-4 flex items-center justify-center rounded-md">
               {unread}
             </span>
           )}

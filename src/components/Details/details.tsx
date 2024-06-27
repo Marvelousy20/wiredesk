@@ -37,14 +37,14 @@ export default function Details({ isCollapsed, onCollapseToggle }: ItemProps) {
                 }`}
               >
                 <Tab
-                  className={`data-[selected]:outline-none relative border-black data-[selected]:opacity-100 opacity-75 ${
+                  className={`data-[selected]:outline-none relative border-black data-[selected]:text-black text-blackInactive ${
                     selectedIndex === 0 && "tab-selected"
                   }`}
                 >
                   Details
                 </Tab>
                 <Tab
-                  className={`data-[selected]:outline-none relative border-black data-[selected]:opacity-100 opacity-75 ${
+                  className={`data-[selected]:outline-none relative border-black data-[selected]:text-black text-blackInactive ${
                     selectedIndex === 1 && "tab-selected"
                   }`}
                 >

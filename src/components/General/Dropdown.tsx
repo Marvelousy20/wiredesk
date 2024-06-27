@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 import { ChevronUp, ChevronDown } from "lucide-react";
+import { MdOutlineMoreHoriz } from "react-icons/md";
 
 interface DropdownProps {
   title?: string;
@@ -26,10 +27,12 @@ const Dropdown = ({ title, items }: DropdownProps) => {
           <span>
             {isOpen ? <ChevronDown size={15} /> : <ChevronUp size={15} />}
           </span>
-          <span className="text-[0.75rem]">{title}</span>
+          <span className="text-[0.75rem] text-black">{title}</span>
         </div>
 
-        <div>...</div>
+        <div>
+          <MdOutlineMoreHoriz size={16} />
+        </div>
       </button>
 
       <Transition
@@ -45,7 +48,7 @@ const Dropdown = ({ title, items }: DropdownProps) => {
           {items?.map((item: string, index: number) => (
             <div
               key={index}
-              className="pl-4 border-gray-300 hover:bg-[#EEEFF1]"
+              className="pl-4 border-gray-300 hover:bg-[#EEEFF1] text-blackInactive"
             >
               {item}
             </div>

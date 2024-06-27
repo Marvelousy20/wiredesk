@@ -56,18 +56,18 @@ const MessageDetails = ({
             </div>
 
             <div className="flex gap-x-3 items-center">
-              <span className="hover:bg-[#EEEFF1] rounded-[10px] p-1">
+              <span className="hover:bg-[#EEEFF1] rounded-[10px] p-1 hover:scale-110 transition-transform duration-200">
                 <MdOutlineMoreHoriz size={24} />
               </span>
 
-              <span className="hover:bg-[#EEEFF1] rounded-[10px] p-1">
+              <span className="hover:bg-[#EEEFF1] rounded-[10px] p-1 hover:scale-110 transition-transform duration-200">
                 <MdOutlinePersonAddAlt size={24} />
               </span>
-              <span className="hover:bg-[#EEEFF1] rounded-[10px] p-1">
+              <span className="hover:bg-[#EEEFF1] rounded-[10px] p-1 hover:scale-110 transition-transform duration-200">
                 <MdOutlineGrade size={24} />
               </span>
 
-              <span className="hover:bg-[#EEEFF1] rounded-[10px] p-1">
+              <span className="hover:bg-[#EEEFF1] rounded-[10px] p-1 hover:scale-110 transition-transform duration-200">
                 <MdOutlineSnooze size={24} />
               </span>
 
