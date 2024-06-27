@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         black: "#232529",
+        blackInactive: "#686662",
       },
       boxShadow: {
         bottom: "0 2px 2px -1px rgba(0, 0, 0, 0.1)",

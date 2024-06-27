@@ -40,14 +40,16 @@ const profileDetails = () => {
       </div>
 
       <div className="text-center">
-        <h1 className="text-sm font-medium mt-2">James Books</h1>
-        <p className="opacity-75 text-[0.75rem] mt-1">Springfield, USA</p>
+        <h1 className="text-sm font-medium mt-2 text-black">James Books</h1>
+        <p className="text-blackInactive text-[0.75rem] mt-1">
+          Springfield, USA
+        </p>
 
-        <div className="flex items-center gap-2 opacity-75 text-[0.75rem] mt-2 justify-center">
+        <div className="flex items-center gap-2 text-blackInactive text-[0.75rem] mt-2 justify-center">
           <MdCall size={15} /> <span>+1 (555) 123-4567</span>
         </div>
 
-        <div className="flex items-center justify-center gap-2 opacity-75 text-[0.75rem] mt-1">
+        <div className="flex items-center justify-center gap-2 text-blackInactive text-[0.75rem] mt-1">
           <MdEmail size={15} /> <span>James.brooks@wiredesk.com</span>
         </div>
       </div>

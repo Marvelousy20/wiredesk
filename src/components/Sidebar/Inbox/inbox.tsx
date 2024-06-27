@@ -164,9 +164,10 @@ export default function Inbox() {
         {messages.map((message, id) => (
           <div
             key={id}
-            className={`flex items-center hover:bg-[#EEEFF1] justify-between p-2 opacity-75 cursor-pointer font-medium ${
-              selectedInbox === message.title &&
-              "bg-[#EEEFF1] !opacity-100 rounded-tr-lg border-black rounded-r-[3px] container"
+            className={`flex items-center hover:bg-[#EEEFF1] justify-between p-2 cursor-pointer font-medium  ${
+              selectedInbox === message.title
+                ? "bg-[#EEEFF1] rounded-tr-lg border-black rounded-r-[3px] container text-black"
+                : "text-blackInactive"
             }`}
             onClick={() => setSelectedInbox(message.title)}
           >
@@ -178,8 +179,9 @@ export default function Inbox() {
 
               <p
                 className={`text-[0.75rem] ${
-                  selectedInbox === message.title &&
-                  "bg-black text-white px-1 rounded-md flex items-center"
+                  selectedInbox === message.title
+                    ? "text-white px-1 rounded-md flex items-center bg-black"
+                    : "text-blackInactive"
                 }`}
               >
                 {message.unread}
@@ -197,7 +199,7 @@ export default function Inbox() {
             <div key={id} className="flex justify-between items-center p-2">
               <div className="flex items-center gap-1.5 text-sm font-medium">
                 <p>{team.icon}</p>
-                <p className="opacity-75">{team.title}</p>
+                <p className="text-blackInactive">{team.title}</p>
               </div>
 
               <p
@@ -221,7 +223,7 @@ export default function Inbox() {
             <div key={id} className="flex justify-between items-center p-2">
               <div className="flex items-center gap-1.5 text-sm font-medium">
                 <p>{teammate.icon}</p>
-                <p className="opacity-75">{teammate.title}</p>
+                <p className="text-blackInactive">{teammate.title}</p>
               </div>
 
               <p
@@ -245,7 +247,7 @@ export default function Inbox() {
             <div key={id} className="flex justify-between items-center p-2">
               <div className="flex items-center gap-1.5 text-sm font-medium">
                 <p>{ticket.icon}</p>
-                <p className="opacity-75">{ticket.title}</p>
+                <p className="text-blackInactive">{ticket.title}</p>
               </div>
 
               <p
@@ -269,7 +271,7 @@ export default function Inbox() {
             <div key={id} className="flex justify-between items-center p-2">
               <div className="flex items-center gap-1.5 text-sm font-medium">
                 <p>{channel.icon}</p>
-                <p className="opacity-75">{channel.title}</p>
+                <p className="text-blackInactive">{channel.title}</p>
               </div>
 
               <p
@@ -292,7 +294,7 @@ export default function Inbox() {
             <div key={id} className="flex justify-between items-center p-2">
               <div className="flex items-center gap-1.5 text-sm font-medium">
                 <p>{channel.icon}</p>
-                <p className="opacity-75">{channel.title}</p>
+                <p className="text-blackInactive">{channel.title}</p>
               </div>
 
               <p
@@ -315,7 +317,7 @@ export default function Inbox() {
             <div key={id} className="flex justify-between items-center p-2">
               <div className="flex items-center gap-1.5 text-sm font-medium">
                 <p>{channel.icon}</p>
-                <p className="opacity-75">{channel.title}</p>
+                <p className="text-blackInactive">{channel.title}</p>
               </div>
 
               <p
