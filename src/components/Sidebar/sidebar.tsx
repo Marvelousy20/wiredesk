@@ -64,7 +64,7 @@ export default function Sidebar({
             <div className="">
               <button
                 onClick={() => handleSelect("messages")}
-                className={`mb-5 p-2 ${
+                className={`mb-5 p-2 hover:scale-110 transition-transform duration-200 ${
                   selected === "messages"
                     ? "bg-black rounded-lg"
                     : "hover:bg-[#EEEFF1] rounded-sm"
@@ -80,7 +80,7 @@ export default function Sidebar({
             <div>
               <button
                 onClick={() => handleSelect("mylo")}
-                className={`mb-5 p-2 ${
+                className={`mb-5 p-2 hover:scale-110 transition-transform duration-200 ${
                   selected === "mylo"
                     ? "bg-black rounded-lg"
                     : "hover:bg-[#EEEFF1] rounded-sm"
@@ -98,7 +98,7 @@ export default function Sidebar({
             <div>
               <button
                 onClick={() => handleSelect("support")}
-                className={`mb-5 p-2 ${
+                className={`mb-5 p-2 hover:scale-110 transition-transform duration-200 ${
                   selected === "support"
                     ? "bg-black rounded-lg"
                     : "hover:bg-[#EEEFF1] rounded-sm"
@@ -114,7 +114,7 @@ export default function Sidebar({
             <div>
               <button
                 onClick={() => handleSelect("campaign")}
-                className={`mb-5 p-2 ${
+                className={`mb-5 p-2 hover:scale-110 transition-transform duration-200 ${
                   selected === "campaign"
                     ? "bg-black rounded-lg"
                     : "hover:bg-[#EEEFF1] rounded-sm"
@@ -130,7 +130,7 @@ export default function Sidebar({
             <div>
               <button
                 onClick={() => handleSelect("finance")}
-                className={`mb-5 p-2 ${
+                className={`mb-5 p-2 hover:scale-110 transition-transform duration-200 ${
                   selected === "finance"
                     ? "bg-black rounded-lg"
                     : "hover:bg-[#EEEFF1] rounded-sm"
@@ -146,7 +146,7 @@ export default function Sidebar({
             <div>
               <button
                 onClick={() => handleSelect("settings")}
-                className={`mb-5 p-2 ${
+                className={`mb-5 p-2 hover:scale-110 transition-transform duration-200 ${
                   selected === "settings"
                     ? "bg-black rounded-lg"
                     : "hover:bg-[#EEEFF1] rounded-sm"
@@ -164,7 +164,7 @@ export default function Sidebar({
             <div>
               <button
                 onClick={() => handleSelect("mylo_last")}
-                className={`mb-5 p-2 ${
+                className={`mb-5 p-2 hover:scale-110 transition-transform duration-200 ${
                   selected === "mylo_last"
                     ? "bg-black rounded-lg"
                     : "hover:bg-[#EEEFF1] rounded-sm"
@@ -180,9 +180,8 @@ export default function Sidebar({
         </div>
 
         {/* Corresponding items */}
-
         <div
-          className={`h-full transition-all duration-300 column-a2 ${
+          className={`h-full border-r transition-all duration-300 column-a2 ${
             isCollapsed ? "w-0" : "w-[80.365%]"
           }`}
         >

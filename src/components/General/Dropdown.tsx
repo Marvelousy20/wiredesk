@@ -25,13 +25,17 @@ const Dropdown = ({ title, items }: DropdownProps) => {
       >
         <div className="flex items-center gap-2">
           <span>
-            {isOpen ? <ChevronDown size={15} /> : <ChevronUp size={15} />}
+            {isOpen ? (
+              <ChevronDown size={15} color="#232529" />
+            ) : (
+              <ChevronUp size={15} color="#232529" />
+            )}
           </span>
           <span className="text-[0.75rem] text-black">{title}</span>
         </div>
 
-        <div>
-          <MdOutlineMoreHoriz size={16} />
+        <div className="hover:bg-[#EEEFF1] hover:scale-110 transition-transform duration-200">
+          <MdOutlineMoreHoriz size={16} color="#232529" />
         </div>
       </button>
 
