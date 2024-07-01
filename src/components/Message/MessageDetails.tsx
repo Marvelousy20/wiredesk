@@ -38,7 +38,7 @@ const MessageDetails = ({
               width={25}
               height={25}
             />
-            <h1 className="font-semibold lg:text-lg text-black">James Books</h1>
+            <h1 className="font-semibold lg:text-xl text-black">James Books</h1>
           </div>
 
           <div className="flex items-center gap-x-3">
