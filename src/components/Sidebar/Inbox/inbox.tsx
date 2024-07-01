@@ -263,6 +263,52 @@ export default function Inbox() {
         />
       </div>
 
+      <div className="mt-4">
+        <Dropdown
+          title="Tickets"
+          items={tickets.map((ticket, id) => (
+            <div key={id} className="flex justify-between items-center p-2">
+              <div className="flex items-center gap-1.5 text-sm font-medium">
+                <p>{ticket.icon}</p>
+                <p className="text-blackInactive">{ticket.title}</p>
+              </div>
+
+              <p
+                className={`text-[0.75rem] ${
+                  selectedInbox === ticket.title &&
+                  "bg-black text-white px-1 rounded-md"
+                }`}
+              >
+                {ticket.unread}
+              </p>
+            </div>
+          ))}
+        />
+      </div>
+
+      <div className="mt-4">
+        <Dropdown
+          title="Tickets"
+          items={tickets.map((ticket, id) => (
+            <div key={id} className="flex justify-between items-center p-2">
+              <div className="flex items-center gap-1.5 text-sm font-medium">
+                <p>{ticket.icon}</p>
+                <p className="text-blackInactive">{ticket.title}</p>
+              </div>
+
+              <p
+                className={`text-[0.75rem] ${
+                  selectedInbox === ticket.title &&
+                  "bg-black text-white px-1 rounded-md"
+                }`}
+              >
+                {ticket.unread}
+              </p>
+            </div>
+          ))}
+        />
+      </div>
+
       {/* Channels */}
       <div className="mt-4">
         <Dropdown

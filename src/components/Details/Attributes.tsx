@@ -62,7 +62,7 @@ const attributes = [
 const Attributes = () => {
   return (
     <section className="px-9 mt-4">
-      <div className="flex justify-end font-bold text-sm">
+      <div className="flex justify-end font-medium text-black text-sm">
         <button className="flex items-center border rounded-md px-2.5 py-1.5">
           <MdAdd size={15} /> Add Attribute
         </button>
@@ -72,11 +72,11 @@ const Attributes = () => {
         {attributes.map((attribute, index) => (
           <div
             key={index}
-            className="flex items-center justify-between mt-5 text-[0.75rem]"
+            className="flex items-center justify-between mt-5 text-[0.75rem] font-medium"
           >
-            <h3>{attribute.title}</h3>
+            <h3 className="text-blackInactive">{attribute.title}</h3>
 
-            <h5>{attribute.details}</h5>
+            <h5 className="text-black">{attribute.details}</h5>
           </div>
         ))}
       </div>

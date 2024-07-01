@@ -10,7 +10,11 @@ import {
 } from "react-icons/md";
 import { Button } from "@headlessui/react";
 import { useState } from "react";
-import { LuPanelRightClose } from "react-icons/lu";
+import {
+  LuPanelLeftOpen,
+  LuPanelRightClose,
+  LuPanelRightOpen,
+} from "react-icons/lu";
 
 interface MessageDetailsProps {
   isCollapsedDetailsbar: boolean;
@@ -38,7 +42,7 @@ const MessageDetails = ({
           </div>
 
           <div className="flex items-center gap-x-3">
-            <div className="relative">
+            <div className={`relative ${isCollapsedDetailsbar ? "mr-28" : ""}`}>
               <Image
                 src="/messages/w-avatar.svg"
                 alt="avatar"
@@ -87,8 +91,11 @@ const MessageDetails = ({
             </div>
 
             {isCollapsedDetailsbar && (
-              <div className="cursor-pointer" onClick={onCollapseToggle}>
-                <LuPanelRightClose size={20} />
+              <div
+                className="cursor-pointer hover:bg-[#EEEFF1] rounded-[10px] p-1 hover:scale-110 transition-transform duration-200"
+                onClick={onCollapseToggle}
+              >
+                <LuPanelRightOpen size={20} />
               </div>
             )}
           </div>

@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="max-w-[1640px] mx-auto 2xl:border overflow-hidden h-screen">
+        <main className="max-w-[1640px] mx-auto 2xl:border overflow-hidden h-screen text-black">
           <MainContent />
           {children}
         </main>

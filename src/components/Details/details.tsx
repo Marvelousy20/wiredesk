@@ -32,19 +32,19 @@ export default function Details({ isCollapsed, onCollapseToggle }: ItemProps) {
               }`}
             >
               <TabList
-                className={`justify-between font-semibold text-lg ${
+                className={`justify-between font-semibold text-lg text-blackInactive ${
                   isCollapsed ? "hidden" : "flex w-[85%]"
                 }`}
               >
                 <Tab
-                  className={`data-[selected]:outline-none relative border-black data-[selected]:text-black text-blackInactive ${
+                  className={`data-[selected]:outline-none relative border-black data-[selected]:text-black ${
                     selectedIndex === 0 && "tab-selected"
                   }`}
                 >
                   Details
                 </Tab>
                 <Tab
-                  className={`data-[selected]:outline-none relative border-black data-[selected]:text-black text-blackInactive ${
+                  className={`data-[selected]:outline-none relative border-black data-[selected]:text-black ${
                     selectedIndex === 1 && "tab-selected"
                   }`}
                 >
@@ -65,6 +65,9 @@ export default function Details({ isCollapsed, onCollapseToggle }: ItemProps) {
                 ) : (
                   <LuPanelRightClose size={20} />
                 )}
+                {/* <span className="hover:bg-[#EEEFF1] rounded-[10px] p-1 hover:scale-110 transition-transform duration-200">
+                  <LuPanelRightClose size={20} />
+                </span> */}
               </button>
             </div>
             <TabPanels className={isCollapsed ? "hidden" : "block"}>
