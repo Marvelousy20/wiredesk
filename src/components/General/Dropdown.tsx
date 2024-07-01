@@ -31,7 +31,7 @@ const Dropdown = ({ title, items }: DropdownProps) => {
               <ChevronUp size={15} color="#232529" />
             )}
           </span>
-          <span className="text-[0.75rem] text-black">{title}</span>
+          <span className="text-[0.75rem] text-black font-medium">{title}</span>
         </div>
 
         <div className="hover:bg-[#EEEFF1] hover:scale-110 transition-transform duration-200">
