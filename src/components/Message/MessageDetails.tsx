@@ -75,7 +75,7 @@ const MessageDetails = ({
                 <MdOutlineSnooze size={24} />
               </span>
 
-              <Button className="bg-black text-white p-1.5 px-2 text-sm rounded-md">
+              <Button className="bg-black text-white p-1.5 px-2 text-sm rounded-[5px]">
                 {isOpen ? (
                   <span className="flex gap-1 items-center">
                     <MdOutlineArchive size={20} />
