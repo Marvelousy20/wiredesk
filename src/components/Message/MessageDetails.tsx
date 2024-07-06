@@ -254,7 +254,7 @@ const MessageDetails = ({
                 </div>
               </div>
 
-              <div className="items-center p-4 bg-white rounded-lg shadow mt-4 w-full">
+              <div className="items-center px-4 py-4 bg-white rounded-[5px] shadow-sides mt-4 w-full">
                 <div>
                   <input
                     type="text"
@@ -265,7 +265,7 @@ const MessageDetails = ({
                   />
                 </div>
 
-                <div className="flex justify-between">
+                <div className="flex justify-between mt-5">
                   <div className="flex items-end">
                     <MdMoreHoriz color="#232529" size={20} />
                   </div>
