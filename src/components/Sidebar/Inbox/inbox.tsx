@@ -5,6 +5,7 @@ import Dropdown from "@/components/General/Dropdown";
 import { useState } from "react";
 import Image from "next/image";
 import { MdOutlineAlternateEmail, MdOutlineInbox } from "react-icons/md";
+import { useSidebar } from "@/context/sidebarContext";
 
 const messages = [
   {
@@ -158,8 +159,13 @@ const channels = [
 export default function Inbox() {
   const [selectedInbox, setSelectedInbox] = useState("Inbox");
 
+  const { isLeftCollapsed } = useSidebar();
+
   return (
-    <div className="h-full">
+    <div
+      key={isLeftCollapsed ? "collapsed" : "expanded"}
+      className="h-full overflow-hidden hover:overflow-auto custom-scrollbar pr-[5px] hover:pr-0"
+    >
       <div className="">
         {messages.map((message, id) => (
           <div

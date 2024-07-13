@@ -13,9 +13,10 @@ import {
 } from "react-icons/md";
 import { BsStars } from "react-icons/bs";
 import { LuPanelLeftClose } from "react-icons/lu";
-import Connections from "../Connections";
+import Connections from "../Connections/AllApplications";
 import Message from "../Message/message";
 import Details from "../Details/details";
+import MessagesContainer from "../MessagesContainer";
 
 interface SelectableItems {
   messages: string;
@@ -35,7 +36,6 @@ interface ItemProps {
   getMessageWidth: () => string;
   isDetailedSidebarCollapsed: boolean;
   onDetailsCollapseToggle: () => void;
-  // width: string;
 }
 
 export default function Sidebar({
@@ -57,14 +57,17 @@ export default function Sidebar({
   return (
     <section
       className={`transition-width ease-in-out duration-300 bg-[#FBFBFB] column-a ${
-        isCollapsed ? "w-[3.571%]" : "w-[18.187%]"
+        // isCollapsed ? "w-[3.571%]" : "w-[18.187%]"
+        isCollapsed ? "w-full" : "w-full"
       }`}
     >
       <div className="flex w-full h-full justify-center">
+        {/* All sidebar icons */}
         <div
-          className={`border-r column-a1 ${
-            isCollapsed ? "w-full" : "w-[19.635%] "
-          }`}
+          className={`border-r column-a1 w-[3.571%]`}
+          //   ${
+          //   isCollapsed ? "w-full" : "w-[19.635%]"
+          // }`}
         >
           <div className="shadow-bottom h-16 justify-center flex items-center">
             <Image src="/sidebar/logo.svg" alt="logo" width={30} height={30} />
@@ -197,11 +200,16 @@ export default function Sidebar({
 
         {/* Corresponding items */}
         <div
-          className={`h-full border-r transition-all duration-300 column-a2 ${
-            isCollapsed ? "w-0" : "w-[80.365%]"
-          }`}
+          className={`h-full border-r transition-all duration-300 column-a2 w-full bg-red-500`}
+          //   ${
+          //   isCollapsed ? "w-0" : "w-[80.365%]"
+          // }`}
         >
-          <div className="h-16 sticky top-0 z-20">
+          <div
+            className={`h-16 sticky top-0 z-20 ${
+              isCollapsed ? "w-[0]" : "w-[15.16%]"
+            }`}
+          >
             <div
               className={`h-16 flex items-center justify-between ${
                 isCollapsed ? "w-full" : "px-2"
@@ -218,7 +226,7 @@ export default function Sidebar({
               <button
                 className={
                   isCollapsed
-                    ? "w-full justify-center absolute left-2 items-center hidden bg-red-500"
+                    ? "w-full justify-center absolute left-2 items-center hidden"
                     : "w-full flex justify-end"
                 }
               >
@@ -228,14 +236,22 @@ export default function Sidebar({
           </div>
 
           <div
-            className={`w-full mt-2 h-full ${
-              isCollapsed ? "hidden" : "block"
-            } overflow-hidden hover:overflow-auto custom-scrollbar pr-[5px] hover:pr-0`}
+          // className={`w-full mt-2 h-full ${
+          //   isCollapsed ? "hidden" : "block"
+          // } overflow-hidden hover:overflow-auto custom-scrollbar pr-[5px] hover:pr-0`}
           >
             {selected === "messages" && (
               <div className="flex">
-                <Inbox />
-                <div
+                <MessagesContainer
+                  isCollapsedDetailsbar={isDetailedSidebarCollapsed}
+                  onCollapseToggle={onCollapseToggle}
+                  onDetailsCollapseToggle={onDetailsCollapseToggle}
+                  isCollapsed={isCollapsed}
+                  getMessageWidth={getMessageWidth}
+                />
+
+                {/* <Inbox /> */}
+                {/* <div
                   className={`transition-all overflow-auto duration-300 ease-out column-b [58.796%]`}
                   style={{ width: getMessageWidth() }}
                 >
@@ -250,9 +266,10 @@ export default function Sidebar({
                 <Details
                   isCollapsed={isDetailedSidebarCollapsed}
                   onCollapseToggle={onDetailsCollapseToggle}
-                />
+                /> */}
               </div>
             )}
+            <div>{selected === "connection" && <Connections />}</div>
           </div>
         </div>
       </div>

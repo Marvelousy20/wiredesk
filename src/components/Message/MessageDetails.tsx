@@ -20,15 +20,9 @@ import {
   MdOutlineSendAndArchive,
 } from "react-icons/md";
 
-interface MessageDetailsProps {
-  isCollapsedDetailsbar: boolean;
-  onCollapseToggle: () => void;
-}
+import { useSidebar } from "@/context/sidebarContext";
 
-const MessageDetails = ({
-  isCollapsedDetailsbar,
-  onCollapseToggle,
-}: MessageDetailsProps) => {
+const MessageDetails = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [message, setMessage] = useState("");
 
@@ -39,6 +33,8 @@ const MessageDetails = ({
       setMessage("");
     }
   };
+
+  const { isRightCollapsed, toggleRightSidebar } = useSidebar();
 
   return (
     <section>
@@ -55,7 +51,7 @@ const MessageDetails = ({
           </div>
 
           <div className="flex items-center gap-x-3">
-            <div className={`relative ${isCollapsedDetailsbar ? "mr-28" : ""}`}>
+            <div className={`relative ${isRightCollapsed ? "mr-28" : ""}`}>
               <Image
                 src="/messages/w-avatar.svg"
                 alt="avatar"
@@ -103,10 +99,10 @@ const MessageDetails = ({
               </Button>
             </div>
 
-            {isCollapsedDetailsbar && (
+            {isRightCollapsed && (
               <div
                 className="cursor-pointer hover:bg-[#EEEFF1] rounded-[10px] p-1 hover:scale-110 transition-transform duration-200"
-                onClick={onCollapseToggle}
+                onClick={toggleRightSidebar}
               >
                 <LuPanelRightOpen size={20} />
               </div>

@@ -4,19 +4,17 @@ import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import { LuPanelRightClose, LuPanelRightOpen } from "react-icons/lu";
 import ProfileDetails from "./ProfileDetails";
 import Comments from "./Comment";
+import { useSidebar } from "@/context/sidebarContext";
 
-interface ItemProps {
-  isCollapsed: boolean;
-  onCollapseToggle: () => void;
-}
-
-export default function Details({ isCollapsed, onCollapseToggle }: ItemProps) {
+export default function Details() {
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const { isRightCollapsed, toggleRightSidebar } = useSidebar();
 
   return (
     <section
       className={`col-span-2 transition-all duration-300 ease-in-out column-c ${
-        isCollapsed ? "w-0" : "w-[23.076%]"
+        isRightCollapsed ? "w-0" : "w-[28.13%]"
       }`}
     >
       <div className="relative">
@@ -28,12 +26,12 @@ export default function Details({ isCollapsed, onCollapseToggle }: ItemProps) {
           >
             <div
               className={`h-16 shadow-bottom w-full flex items-center shadow-b-2 ${
-                isCollapsed ? "" : "px-8"
+                isRightCollapsed ? "" : "px-8"
               }`}
             >
               <TabList
                 className={`justify-between font-semibold text-xl text-blackInactive ${
-                  isCollapsed ? "hidden" : "flex w-[85%]"
+                  isRightCollapsed ? "hidden" : "flex w-[85%]"
                 }`}
               >
                 <Tab
@@ -54,13 +52,13 @@ export default function Details({ isCollapsed, onCollapseToggle }: ItemProps) {
 
               <button
                 className={`flex ${
-                  isCollapsed
+                  isRightCollapsed
                     ? "w-[100%] justify-center"
                     : "w-[15%] justify-end"
                 }`}
-                onClick={onCollapseToggle}
+                onClick={toggleRightSidebar}
               >
-                {isCollapsed ? (
+                {isRightCollapsed ? (
                   <LuPanelRightOpen size={20} />
                 ) : (
                   <LuPanelRightClose size={20} />
@@ -70,7 +68,7 @@ export default function Details({ isCollapsed, onCollapseToggle }: ItemProps) {
                 </span> */}
               </button>
             </div>
-            <TabPanels className={isCollapsed ? "hidden" : "block"}>
+            <TabPanels className={isRightCollapsed ? "hidden" : "block"}>
               <TabPanel>
                 <ProfileDetails />
               </TabPanel>
