@@ -74,7 +74,7 @@ export const applications = [
 ];
 
 const AllApplication = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [selectedApp, setSelectedApp] = useState<appTypes | null>(null);
 
   const openModal = (app: appTypes) => {
