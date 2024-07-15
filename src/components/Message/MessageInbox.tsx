@@ -1,20 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import MessageCard from "./MessageCard";
 import OrderDropdown from "../General/OrderDropwdown";
 import { LuPanelRightClose } from "react-icons/lu";
-import { FiSearch } from "react-icons/fi";
+import { useSidebar } from "@/context/sidebarContext";
 
-interface MessageInboxProps {
-  isCollapsedDetailsbar: boolean;
-  onCollapseToggle: () => void;
-  isCollapsed: boolean;
-}
+const MessagesInbox = () => {
+  const { toggleLeftSidebar, isLeftCollapsed } = useSidebar();
 
-const MessagesInbox = ({
-  isCollapsedDetailsbar,
-  onCollapseToggle,
-  isCollapsed,
-}: MessageInboxProps) => {
   return (
     <section>
       <div
@@ -22,9 +16,9 @@ const MessagesInbox = ({
       >
         <div className={`flex items-center gap-5`}>
           <button
-            onClick={onCollapseToggle}
+            onClick={toggleLeftSidebar}
             className={
-              isCollapsed
+              isLeftCollapsed
                 ? "flex w-full justify-center left-2 items-center"
                 : "w-full hidden justify-end"
             }

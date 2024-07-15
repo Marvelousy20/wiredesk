@@ -15,6 +15,7 @@ const config: Config = {
       boxShadow: {
         bottom: "0 2px 2px -1px rgba(0, 0, 0, 0.1)",
         sides: "0px 4px 4px 0px #0000000D",
+        input: "0px 4px 25px 0px #0000000D;",
       },
 
       backgroundImage: {
