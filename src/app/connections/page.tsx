@@ -11,8 +11,6 @@ const ConnectionHome = () => {
     setSelected(item);
   };
 
-  console.log(selected);
-
   return (
     <div className="h-full flex">
       <SecondColumnWrapper>

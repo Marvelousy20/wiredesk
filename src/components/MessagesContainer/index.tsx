@@ -1,6 +1,6 @@
 import Inbox from "../Sidebar/Inbox/inbox";
 import Message from "../Message/message";
-import Details from "../Details/details";
+import Details from "../Details/Details";
 
 interface MessageInterface {
   isCollapsed: boolean;

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Sidebar from "./Sidebar/sidebar";
 import Message from "./Message/message";
-import Details from "./Details/details";
+import Details from "./Details/Details";
 
 export default function MainContent() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -42,7 +42,7 @@ export default function MainContent() {
         onSelect={handleSelect}
         getMessageWidth={getMessageWidth}
         isDetailedSidebarCollapsed={isDetailedSidebarCollapsed}
-        onDetailsCollapseToggle = {() =>
+        onDetailsCollapseToggle={() =>
           setIsDetailedSidebarCollapsed(!isDetailedSidebarCollapsed)
         }
         selected={selected}

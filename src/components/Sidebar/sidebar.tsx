@@ -15,7 +15,7 @@ import { BsStars } from "react-icons/bs";
 import { LuPanelLeftClose } from "react-icons/lu";
 import Connections from "../Connections/AllApplications";
 import Message from "../Message/message";
-import Details from "../Details/details";
+import Details from "../Details/Details";
 import MessagesContainer from "../MessagesContainer";
 
 interface SelectableItems {

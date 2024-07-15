@@ -4,8 +4,16 @@ import { Input } from "@headlessui/react";
 import Image from "next/image";
 import { Button } from "@headlessui/react";
 import { MdArrowOutward } from "react-icons/md";
+import InsatallModal from "../Modals/InsatallModal";
 
-const applications = [
+export type appTypes = {
+  id: number;
+  name: string;
+  description: string;
+  img: string;
+};
+
+export const applications = [
   {
     id: 1,
     name: "Whatsapp",
@@ -58,7 +66,7 @@ const applications = [
   },
 
   {
-    id: 6,
+    id: 8,
     name: "LiveChat",
     description: "Easily receive and reply to Telegram from your inbox",
     img: "/socials/livechat.svg",
@@ -66,6 +74,18 @@ const applications = [
 ];
 
 const AllApplication = () => {
+  const [isOpen, setIsOpen] = useState(true);
+  const [selectedApp, setSelectedApp] = useState<appTypes | null>(null);
+
+  const openModal = (app: appTypes) => {
+    setSelectedApp(app);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className="text-black">
       <div className="h-16 border-b flex items-center pl-5">
@@ -98,7 +118,10 @@ const AllApplication = () => {
                 <p className="text-sm font-medium mt-3">{a.name}</p>
                 <p className="text-[0.75rem] mt-1">{a.description}</p>
 
-                <Button className="bg-black rounded-[5px] px-2.5 py-[0.3125rem] text-white text-sm font-medium flex items-center gap-2 mt-3">
+                <Button
+                  onClick={() => openModal(a)}
+                  className="bg-black rounded-[5px] px-2.5 py-[0.3125rem] text-white text-sm font-medium flex items-center gap-2 mt-3"
+                >
                   Connect
                   <MdArrowOutward size={20} />
                 </Button>
@@ -107,6 +130,12 @@ const AllApplication = () => {
           </div>
         </div>
       </div>
+
+      <InsatallModal
+        closeModal={closeModal}
+        open={isOpen}
+        selectedApp={selectedApp}
+      />
     </div>
   );
 };

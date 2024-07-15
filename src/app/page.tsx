@@ -4,7 +4,7 @@ import Image from "next/image";
 import SecondColumnWrapper from "@/components/Common/SecondColumnWrapper";
 import Inbox from "@/components/Sidebar/Inbox/inbox";
 import Message from "@/components/Message/message";
-import Details from "@/components/Details/details";
+import Details from "@/components/Details/Details";
 import { useSidebar } from "@/context/sidebarContext";
 
 export default function Home() {
