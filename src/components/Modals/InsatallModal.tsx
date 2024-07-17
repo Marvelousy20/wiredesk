@@ -242,12 +242,20 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
                   <h2 className="mb-2 text-lg font-bold">
                     Proceed to Instagram
                   </h2>
-                  <p>To connect to Instagram, click below:</p>
-                  <a
+                  <p>To connect to Instagram, click the link below:</p>
+                  {/* <a
                     href={url}
                     className="inline-block px-4 py-2 bg-black text-white rounded hover:bg-opacity-70 mt-10"
                   >
                     Go to Instagram
+                  </a> */}
+
+                  <a
+                    href={url}
+                    className="inline-block px-4 py-2 text-blue-400 rounded hover:bg-opacity-70 mt-10 w-full overflow-hidden text-ellipsis whitespace-nowrap"
+                    title={url}
+                  >
+                    {url}
                   </a>
                 </div>
               )}
