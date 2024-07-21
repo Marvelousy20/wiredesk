@@ -58,6 +58,20 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
     }
   };
 
+  const getWhatsappUrl = async () => {
+    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/discord/login/url`;
+
+    try {
+      const result = await axios.get(apiUrl);
+      const url = result.data?.data?.url;
+      setIsLoading(false);
+      setUrl(url);
+      console.log(url);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const handleAppConnection = () => {
     switch (selectedApp?.name) {
       case "Instagram":
