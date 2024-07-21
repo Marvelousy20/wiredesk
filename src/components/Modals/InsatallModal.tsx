@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Dialog,
   DialogPanel,
@@ -27,7 +27,6 @@ interface InstallAppProps {
 const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [url, setUrl] = useState("");
-  const [isUrlDialogOpen, setUrlDialogOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const getInstagramUrl = async () => {
@@ -45,12 +44,13 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
     }
   };
 
-  const Discord = async () => {
+  const getDiscordUrl = async () => {
     const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/discord/login/url`;
 
     try {
       const result = await axios.get(apiUrl);
       const url = result.data?.data?.url;
+      setIsLoading(false);
       setUrl(url);
       console.log(url);
     } catch (error) {
@@ -59,9 +59,6 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
   };
 
   const handleAppConnection = () => {
-    closeModal();
-    setUrlDialogOpen(true);
-    setIsLoading(true);
     switch (selectedApp?.name) {
       case "Instagram":
         getInstagramUrl();
@@ -72,10 +69,21 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
       case "Telegram":
         getInstagramUrl();
         break;
+      case "Discord":
+        getDiscordUrl();
+        break;
       default:
         console.log("App not supported");
+        setIsLoading(false);
+        return;
     }
   };
+
+  useEffect(() => {
+    if (url) {
+      window.open(url, "_blank");
+    }
+  }, [url]); // This effect runs whenever the url state changes
 
   return (
     <>
@@ -119,9 +127,18 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
                 <div className="flex flex-col">
                   <button
                     onClick={handleAppConnection}
-                    className="text-white bg-black rounded-[5px] text-xl px-2.5 py-[0.3125rem]"
+                    className={`${
+                      isLoading ? "" : "hover:bg-black/90"
+                    } text-white bg-black rounded-[5px] text-xl px-2.5 h-[34px]`}
+                    disabled={isLoading}
                   >
-                    Install now
+                    {isLoading ? (
+                      <div className="flex items-center justify-center">
+                        <FaSpinner className="animate-spin" />
+                      </div>
+                    ) : (
+                      <span>Install now</span>
+                    )}
                   </button>
                   <div className="grid mt-3 space-y-2 text-[#686662] text-lg">
                     <Link href="/" className="underline">
@@ -195,7 +212,7 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
                     </TabGroup>
                   </div>
 
-                  <div className="w-[30.4%] border border-[#EEEFF1] pt-9 px-12 h-[652px]">
+                  <div className="w-[30.4%] border border-[#EEEFF1] pt-9 px-12 h-[500px]">
                     <div className="bg-[#2325290D] bg-opacity-5 py-12  px-8 space-y-4 rounded-[10px]">
                       <h1 className="text-black font-semibold text-xl">
                         Have a question?
@@ -224,7 +241,7 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
         </div>
       </Dialog>
 
-      <Dialog open={isUrlDialogOpen} onClose={() => setUrlDialogOpen(false)}>
+      {/* <Dialog open={isUrlDialogOpen} onClose={() => setUrlDialogOpen(false)}>
         <div className="fixed inset-0 bg-black/80" aria-hidden="true"></div>
         <div className="fixed inset-0 flex items-center justify-center p-4">
           <DialogPanel className="bg-white p-6 rounded-lg shadow-lg w-[30rem] h-[20rem] mx-auto">
@@ -243,17 +260,13 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
                     Proceed to Instagram
                   </h2>
                   <p>To connect to Instagram, click the link below:</p>
-                  {/* <a
-                    href={url}
-                    className="inline-block px-4 py-2 bg-black text-white rounded hover:bg-opacity-70 mt-10"
-                  >
-                    Go to Instagram
-                  </a> */}
+                  
 
                   <a
                     href={url}
                     className="inline-block px-4 py-2 text-blue-400 rounded hover:bg-opacity-70 mt-10 w-full overflow-hidden text-ellipsis whitespace-nowrap"
                     title={url}
+                    target="_blank"
                   >
                     {url}
                   </a>
@@ -262,7 +275,7 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
             </div>
           </DialogPanel>
         </div>
-      </Dialog>
+      </Dialog> */}
     </>
   );
 };
