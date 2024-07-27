@@ -46,7 +46,27 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
 
   const getDiscordUrl = async () => {
     const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/discord/login/url`;
+    const token = process.env.NEXT_PUBLIC_API_TOKEN;
+    setIsLoading(true);
+    try {
+      const result = await axios.get(apiUrl, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const url = result.data?.data?.url;
+      setIsLoading(false);
+      setUrl(url);
+      console.log(url);
+    } catch (error) {
+      console.error(error);
+      setIsLoading(false);
+    }
+  };
 
+  const getWhatsappUrl = async () => {
+    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/discord/login/url`;
+    setIsLoading(true);
     try {
       const result = await axios.get(apiUrl);
       const url = result.data?.data?.url;
@@ -58,15 +78,61 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
     }
   };
 
-  const getWhatsappUrl = async () => {
-    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/discord/login/url`;
+  // https://wiredesk-be.onrender.com/api/v1/telegram/install
+
+  const installTelegram = async () => {
+    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/telegram/install`;
+    console.log(apiUrl);
+    setIsLoading(true);
+
+    const botToken = "7186977181:AAEP0CzZR8Y6Czdl3PnM1zrq8SPOYMGPUCE";
+    const accessToken =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjAwNzc1MiwiZXhwIjoxNzIyMDA4NjUyLCJhdWQiOiJXSVJFX0RFU0siLCJpc3MiOiJXSVJFX0RFU0sifQ.doU0gAWG1pYXpm79qUsivs3V4V1navdYhflfTIdGnow";
+    const postData = {
+      botToken: botToken,
+    };
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+    };
+
+    //  https://www.linkedin.com/in/marvelous-afolabi-22a290183?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app
 
     try {
-      const result = await axios.get(apiUrl);
-      const url = result.data?.data?.url;
+      const response = await axios.post(apiUrl, postData, config);
+      console.log("Response from telegram", response?.data);
       setIsLoading(false);
-      setUrl(url);
-      console.log(url);
+    } catch (error) {
+      console.error(error);
+      setIsLoading(false);
+    }
+  };
+
+  const installSlack = async () => {
+    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/slack/install`;
+
+    const botToken =
+      "xoxb-2116180242839-7490350478900-dYYGb48zYq7BJrA6h0i1Y4hE ";
+
+    const postData = {
+      botToken: botToken,
+      secret: "bcc691b8ba5064b6e081c0b480a1a800",
+    };
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
+      },
+    };
+
+    try {
+      const result = await axios.post(apiUrl, postData, config);
+
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
     }
@@ -81,10 +147,13 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
         getInstagramUrl();
         break;
       case "Telegram":
-        getInstagramUrl();
+        installTelegram();
         break;
       case "Discord":
         getDiscordUrl();
+        break;
+      case "Slack":
+        installSlack();
         break;
       default:
         console.log("App not supported");
@@ -95,9 +164,21 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
 
   useEffect(() => {
     if (url) {
-      window.open(url, "_blank");
+      const width = 600;
+      const height = 600;
+      const left = window.innerWidth / 2 - width / 2;
+      const top = window.innerHeight / 2 - height / 2;
+
+      const newWindow = window.open(
+        url,
+        "_blank",
+        `width=${width}, height=${height}, top=${top}, left=${left}`
+      );
+      if (newWindow) newWindow.focus();
+
+      setUrl(""); // Reset URL to prevent re-opening
     }
-  }, [url]); // This effect runs whenever the url state changes
+  }, [url]);
 
   return (
     <>
