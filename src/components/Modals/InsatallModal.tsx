@@ -9,7 +9,6 @@ import {
   TabList,
   TabPanel,
   TabPanels,
-  //   DialogBackdrop,
 } from "@headlessui/react";
 import { appTypes } from "../Connections/AllApplications";
 import Image from "next/image";
@@ -68,8 +67,6 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
     }
   };
 
-  // https://discord.com/oauth2/authorize?client_id=1260250389903704094&permissions=125952&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fconnections&integration_type=0&scope=bot
-
   const loginWithDiscord = async () => {
     const loginApi = `${process.env.NEXT_PUBLIC_API_URL}/discord/login`;
     const token = process.env.NEXT_PUBLIC_API_TOKEN;
@@ -121,8 +118,6 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
       console.error(error);
     }
   };
-
-  // https://wiredesk-be.onrender.com/api/v1/telegram/install
 
   const installTelegram = async () => {
     const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/telegram/install`;
