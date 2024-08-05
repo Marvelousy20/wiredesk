@@ -5,10 +5,10 @@ import Inbox from "@/components/Sidebar/Inbox/inbox";
 import Message from "@/components/Message/message";
 
 import { useSidebar } from "@/context/sidebarContext";
-import Details from "@/components/Details/Details";
+import Details from "@/components/Details";
 
 export default function Home() {
-  const { isRightCollapsed, isLeftCollapsed } = useSidebar();
+  // const { isRightCollapsed, isLeftCollapsed } = useSidebar();
 
   // const getMessageWidth = () => {
   //   let defaultWidth = "71.86%";
