@@ -17,6 +17,7 @@ import Link from "next/link";
 import { MdOutlineOpenInNew } from "react-icons/md";
 import axios from "axios";
 import { FaSpinner } from "react-icons/fa";
+import { useSearchParams } from "next/navigation";
 
 interface InstallAppProps {
   open: boolean;
@@ -27,7 +28,9 @@ interface InstallAppProps {
 const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [url, setUrl] = useState("");
+  const [discordUrl, setDiscordUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const searchParams = useSearchParams();
 
   const getInstagramUrl = async () => {
     const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/instagram/login/url`;
@@ -45,21 +48,62 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
   };
 
   const getDiscordUrl = async () => {
-    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/discord/login/url`;
+    const getUrlApi = `${process.env.NEXT_PUBLIC_API_URL}/discord/login/url`;
     const token = process.env.NEXT_PUBLIC_API_TOKEN;
     setIsLoading(true);
     try {
-      const result = await axios.get(apiUrl, {
+      const result = await axios.get(getUrlApi, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      const url = result.data?.data?.url;
+
+      const url = result.data?.data?.url2;
+      setDiscordUrl(url);
       setIsLoading(false);
-      setUrl(url);
       console.log(url);
     } catch (error) {
       console.error(error);
+      setIsLoading(false);
+    }
+  };
+
+  // https://discord.com/oauth2/authorize?client_id=1260250389903704094&permissions=125952&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fconnections&integration_type=0&scope=bot
+
+  const loginWithDiscord = async () => {
+    const loginApi = `${process.env.NEXT_PUBLIC_API_URL}/discord/login`;
+    const token = process.env.NEXT_PUBLIC_API_TOKEN;
+
+    const code = searchParams.get("code");
+    const guildId = searchParams.get("guild_id");
+    const permission = searchParams.get("permissions");
+
+    if (!code || !guildId || !permission) {
+      console.error("Missing required parameters");
+      return;
+    }
+
+    setIsLoading(true);
+
+    const postData = {
+      permissions: permission,
+      code: code,
+      guildId: guildId,
+    };
+
+    try {
+      const response = await axios.post(loginApi, postData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      // Handle successful login here
+      console.log(response?.data);
+
+      // const { data } = response;
+    } catch (error) {
+      console.error("Login failed:", error);
+    } finally {
       setIsLoading(false);
     }
   };
@@ -98,8 +142,6 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
         Authorization: `Bearer ${accessToken}`,
       },
     };
-
-    //  https://www.linkedin.com/in/marvelous-afolabi-22a290183?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app
 
     try {
       const response = await axios.post(apiUrl, postData, config);
@@ -179,6 +221,25 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
       setUrl(""); // Reset URL to prevent re-opening
     }
   }, [url]);
+
+  // Effect to handle Discord URL redirection
+  useEffect(() => {
+    if (discordUrl) {
+      window.location.href = discordUrl;
+      setDiscordUrl("");
+    }
+  }, [discordUrl]);
+
+  useEffect(() => {
+    const code = searchParams.get("code");
+    const guildId = searchParams.get("guild_id");
+    const permission = searchParams.get("permissions");
+
+    console.log(code, guildId, permission);
+    if (code && guildId && permission) {
+      loginWithDiscord();
+    }
+  }, [searchParams]);
 
   return (
     <>
@@ -336,41 +397,24 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
         </div>
       </Dialog>
 
-      {/* <Dialog open={isUrlDialogOpen} onClose={() => setUrlDialogOpen(false)}>
-        <div className="fixed inset-0 bg-black/80" aria-hidden="true"></div>
-        <div className="fixed inset-0 flex items-center justify-center p-4">
-          <DialogPanel className="bg-white p-6 rounded-lg shadow-lg w-[30rem] h-[20rem] mx-auto">
-            <div className="w-full h-full">
-              {isLoading ? (
-                <div className="flex justify-center items-center h-full">
-                  <FaSpinner
-                    className="animate-spin"
-                    size={32}
-                    color="#232529"
-                  />
-                </div>
-              ) : (
-                <div className="flex flex-col items-center h-full justify-center">
-                  <h2 className="mb-2 text-lg font-bold">
-                    Proceed to Instagram
-                  </h2>
-                  <p>To connect to Instagram, click the link below:</p>
-                  
-
-                  <a
-                    href={url}
-                    className="inline-block px-4 py-2 text-blue-400 rounded hover:bg-opacity-70 mt-10 w-full overflow-hidden text-ellipsis whitespace-nowrap"
-                    title={url}
-                    target="_blank"
-                  >
-                    {url}
-                  </a>
-                </div>
-              )}
-            </div>
-          </DialogPanel>
+      {isLoading && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+          }}
+        >
+          <FaSpinner className="animate-spin" size={50} />
         </div>
-      </Dialog> */}
+      )}
     </>
   );
 };

@@ -4,14 +4,14 @@ import { UserX } from "lucide-react";
 import Dropdown from "@/components/General/Dropdown";
 import { useState } from "react";
 import Image from "next/image";
-import { MdOutlineAlternateEmail, MdOutlineInbox } from "react-icons/md";
+import { MdOutlineAlternateEmail, MdInbox, MdAdd } from "react-icons/md";
 import { useSidebar } from "@/context/sidebarContext";
 
 const messages = [
   {
     title: "Inbox",
-    unread: "2,055",
-    icon: <MdOutlineInbox size={20} />,
+    unread: "254",
+    icon: <MdInbox size={20} />,
   },
   {
     title: "Mentions",
@@ -164,15 +164,29 @@ export default function Inbox() {
   return (
     <div
       key={isLeftCollapsed ? "collapsed" : "expanded"}
-      className="h-full overflow-hidden hover:overflow-auto custom-scrollbar pr-[5px] hover:pr-0"
+      className="h-full overflow-hidden hover:overflow-auto customscrollbar pr-[5px] hover:pr-0"
     >
-      <div className="">
+      <div className="flex justify-between items-center pl-3 lg:pr-6 py-2 mb-1.5">
+        <div className="flex items-center gap-1">
+          <Image
+            src="/sidebar/search.svg"
+            alt="search"
+            width={14}
+            height={14}
+          />
+          <span className="text-secondColumnText text-[0.8125rem]">Search</span>
+        </div>
+        <div>
+          <MdAdd color="#BFBFBF" />
+        </div>
+      </div>
+      <div className="px-3">
         {messages.map((message, id) => (
           <div
             key={id}
-            className={`flex items-center hover:bg-[#EEEFF1] justify-between p-2 cursor-pointer font-medium  ${
+            className={`flex items-center hover:bg-[#EEEFF1] justify-between p-2 cursor-pointer font-medium ${
               selectedInbox === message.title
-                ? "bg-[#EEEFF1] rounded-tr-lg border-black rounded-r-[3px] container text-black"
+                ? "bg-[#7149CE] bg-opacity-15 text-[#B699F9] rounded-tr-lg border-black rounded-r-[3px]"
                 : "text-blackInactive"
             }`}
             onClick={() => setSelectedInbox(message.title)}
@@ -186,7 +200,7 @@ export default function Inbox() {
               <p
                 className={`text-[0.75rem] ${
                   selectedInbox === message.title
-                    ? "text-white px-1 rounded-md flex items-center bg-black"
+                    ? "text-[#B699F9] px-1 rounded-md flex items-center"
                     : "text-blackInactive"
                 }`}
               >
@@ -222,7 +236,7 @@ export default function Inbox() {
       </div>
 
       {/* Teammates */}
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <Dropdown
           title="Teammates"
           items={teamsmates.map((teammate, id) => (
@@ -243,10 +257,10 @@ export default function Inbox() {
             </div>
           ))}
         />
-      </div>
+      </div> */}
 
       {/* Tickets */}
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <Dropdown
           title="Tickets"
           items={tickets.map((ticket, id) => (
@@ -267,9 +281,9 @@ export default function Inbox() {
             </div>
           ))}
         />
-      </div>
+      </div> */}
 
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <Dropdown
           title="Tickets"
           items={tickets.map((ticket, id) => (
@@ -290,9 +304,9 @@ export default function Inbox() {
             </div>
           ))}
         />
-      </div>
+      </div> */}
 
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <Dropdown
           title="Tickets"
           items={tickets.map((ticket, id) => (
@@ -313,10 +327,10 @@ export default function Inbox() {
             </div>
           ))}
         />
-      </div>
+      </div> */}
 
       {/* Channels */}
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <Dropdown
           title="Channels"
           items={channels.map((channel, id) => (
@@ -337,9 +351,9 @@ export default function Inbox() {
             </div>
           ))}
         />
-      </div>
+      </div> */}
 
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <Dropdown
           title="Channels"
           items={channels.map((channel, id) => (
@@ -360,9 +374,9 @@ export default function Inbox() {
             </div>
           ))}
         />
-      </div>
+      </div> */}
 
-      <div className="mt-4">
+      {/* <div className="mt-4">
         <Dropdown
           title="Channels"
           items={channels.map((channel, id) => (
@@ -383,7 +397,7 @@ export default function Inbox() {
             </div>
           ))}
         />
-      </div>
+      </div> */}
     </div>
   );
 }

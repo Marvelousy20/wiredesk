@@ -11,6 +11,10 @@ const config: Config = {
       colors: {
         black: "#232529",
         blackInactive: "#686662",
+        narrowSidebar: "#101012",
+        sidebarSelected: "#6941C6",
+        secondColumn: "#141414",
+        secondColumnText: "#BFBFBF",
       },
       boxShadow: {
         bottom: "0 2px 2px -1px rgba(0, 0, 0, 0.1)",

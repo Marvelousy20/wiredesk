@@ -10,18 +10,18 @@ const SecondColumnWrapper = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div
-      className={`border-r h-full bg-[#FBFBFB] ${
+      className={`border-r h-full bg-secondColumn ${
         isLeftCollapsed ? "w-[0] hidden" : "w-[15.16%]"
       }`}
     >
-      <div className={`h-16 sticky top-0 z-20`}>
+      <div className={`h-16 sticky top-0 z-20 border-b border-[#2B2B2B]`}>
         <div
           className={`h-16 flex items-center justify-between w-full ${
             isLeftCollapsed ? "w-full" : "px-2"
           }`}
         >
           <h1
-            className={`lg:text-xl font-bold ${
+            className={`lg:text-xl font-bold text-white ${
               isLeftCollapsed ? "hidden" : "block"
             }`}
           >
@@ -35,7 +35,11 @@ const SecondColumnWrapper = ({ children }: { children: React.ReactNode }) => {
                 : "w-full flex justify-end"
             }
           >
-            <LuPanelLeftClose size={20} onClick={toggleLeftSidebar} />
+            <LuPanelLeftClose
+              size={20}
+              onClick={toggleLeftSidebar}
+              color="#fff"
+            />
           </button>
         </div>
       </div>
