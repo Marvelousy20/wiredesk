@@ -3,10 +3,9 @@
 import SecondColumnWrapper from "@/components/Common/SecondColumnWrapper";
 import Inbox from "@/components/Sidebar/Inbox/inbox";
 import Message from "@/components/Message/message";
-// import Details from "@/components/Details/details";
 
 import { useSidebar } from "@/context/sidebarContext";
-import Details from "@/components/Details/Details";
+// import Details from "@/components/Details/Details";
 
 export default function Home() {
   const { isRightCollapsed, isLeftCollapsed } = useSidebar();
@@ -41,7 +40,7 @@ export default function Home() {
           <Message />
         </div>
 
-        <Details />
+        {/* <Details /> */}
       </div>
     </main>
   );
