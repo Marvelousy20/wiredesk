@@ -124,9 +124,8 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
     console.log(apiUrl);
     setIsLoading(true);
 
-    const botToken = "7186977181:AAEP0CzZR8Y6Czdl3PnM1zrq8SPOYMGPUCE";
-    const accessToken =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTcyMjAwNzc1MiwiZXhwIjoxNzIyMDA4NjUyLCJhdWQiOiJXSVJFX0RFU0siLCJpc3MiOiJXSVJFX0RFU0sifQ.doU0gAWG1pYXpm79qUsivs3V4V1navdYhflfTIdGnow";
+    const botToken = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN;
+
     const postData = {
       botToken: botToken,
     };
@@ -134,7 +133,7 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
     const config = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${accessToken}`,
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
       },
     };
 
@@ -151,12 +150,11 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
   const installSlack = async () => {
     const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/slack/install`;
 
-    const botToken =
-      "xoxb-2116180242839-7490350478900-dYYGb48zYq7BJrA6h0i1Y4hE ";
+    const botToken = process.env.NEXT_PUBLIC_SLACK_BOT_TOKEN;
 
     const postData = {
       botToken: botToken,
-      secret: "bcc691b8ba5064b6e081c0b480a1a800",
+      secret: process.env.NEXT_PUBLIC_SLACK_SECRET,
     };
 
     const config = {
