@@ -2,7 +2,11 @@
 import { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 import { ChevronUp, ChevronDown } from "lucide-react";
-import { MdOutlineMoreHoriz } from "react-icons/md";
+import {
+  MdOutlineMoreHoriz,
+  MdArrowForwardIos,
+  MdKeyboardArrowDown,
+} from "react-icons/md";
 
 interface DropdownProps {
   title?: string;
@@ -24,18 +28,19 @@ const Dropdown = ({ title, items }: DropdownProps) => {
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex items-center gap-2">
-          <span>
-            {isOpen ? (
-              <ChevronDown size={15} color="#232529" />
-            ) : (
-              <ChevronUp size={15} color="#232529" />
-            )}
+          <span className="text-[0.75rem] text-secondColumnText font-medium">
+            {title}
           </span>
-          <span className="text-[0.75rem] text-black font-medium">{title}</span>
         </div>
 
-        <div className="hover:bg-[#EEEFF1] hover:scale-110 transition-transform duration-200">
-          <MdOutlineMoreHoriz size={16} color="#232529" />
+        <div className="">
+          <span>
+            {isOpen ? (
+              <MdArrowForwardIos size={15} color="#BFBFBF" />
+            ) : (
+              <MdKeyboardArrowDown size={15} color="#BFBFBF" />
+            )}
+          </span>
         </div>
       </button>
 
