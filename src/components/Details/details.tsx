@@ -6,7 +6,7 @@ import ProfileDetails from "./ProfileDetails";
 import Comments from "./Comment";
 import { useSidebar } from "@/context/sidebarContext";
 
-export default function Details() {
+const Details = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const { isRightCollapsed, toggleRightSidebar } = useSidebar();
@@ -81,4 +81,6 @@ export default function Details() {
       </div>
     </section>
   );
-}
+};
+
+export default Details;
