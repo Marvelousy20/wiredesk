@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, Suspense } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Dialog,
   DialogPanel,
@@ -234,7 +234,7 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
   }, [searchParams]);
 
   return (
-    <Suspense>
+    <>
       <Dialog open={open} onClose={closeModal} className="relative z-50">
         <div className="fixed inset-0 bg-black/80" />
         <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
@@ -407,7 +407,7 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
           <FaSpinner className="animate-spin" size={50} />
         </div>
       )}
-    </Suspense>
+    </>
   );
 };
 
