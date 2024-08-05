@@ -57,7 +57,7 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
         },
       });
 
-      const url = result.data?.data?.url2;
+      const url = result.data?.data?.url;
       setDiscordUrl(url);
       setIsLoading(false);
       console.log(url);
@@ -166,7 +166,6 @@ const InsatallModal = ({ open, closeModal, selectedApp }: InstallAppProps) => {
 
     try {
       const result = await axios.post(apiUrl, postData, config);
-
       setIsLoading(false);
     } catch (error) {
       console.error(error);
