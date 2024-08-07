@@ -57,12 +57,12 @@ const MessagesInbox = () => {
         </div>
       </div>
 
-      <div className="w-full">
+      <div className="w-full h-full">
         <MessageCard
           img="/messages/w-avatar.svg"
-          name="James Books"
+          name="Lucas Hernandez"
           status="Sent"
-          time="12:15 PM"
+          time="2h"
           platform="/messages/Whatsapp.svg"
           unread={8}
         />
@@ -70,14 +70,119 @@ const MessagesInbox = () => {
           img="/messages/i-avatar.svg"
           name="Lucas Hernadez"
           status="Hello, I just submited..."
-          time="12:15 PM"
+          time="2h"
           platform="/messages/Instagram.svg"
         />
         <MessageCard
           img="/messages/s-avatar.svg"
           name="Martha Judge"
           status="Hello, I just submited..."
-          time="12:15 PM"
+          time="23m"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Martha Judge"
+          status="Hello, I just submited..."
+          time="45m"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Martha Judge"
+          status="Hello, I just submited..."
+          time="2h"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Martha Judge"
+          status="Hello, I just submited..."
+          time="4h"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Martha Judge"
+          status="Hello, I just submited..."
+          time="10h"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Martha Judge"
+          status="Hello, I just submited..."
+          time="2h"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Martha Judge"
+          status="Hello, I just submited..."
+          time="8h"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Martha Judge"
+          status="Hello, I just submited..."
+          time="2h"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Martha Judge"
+          status="Hello, I just submited..."
+          time="3h"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Martha Judge"
+          status="Hello, I just submited..."
+          time="5h"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Martha Judge"
+          status="Hello, I just submited..."
+          time="7h"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Martha Judge"
+          status="Hello, I just submited..."
+          time="3h"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Martha Judge"
+          status="Hello, I just submited..."
+          time="2h"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Martha Judge"
+          status="Hello, I just submited..."
+          time="1h"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Martha Judge"
+          status="Hello, I just submited..."
+          time="1h"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Martha Judge"
+          status="Hello, I just submited..."
+          time="11h"
           platform="/messages/Slack.svg"
         />
       </div>

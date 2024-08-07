@@ -1,11 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
-import { ChevronUp, ChevronDown } from "lucide-react";
 import {
   MdOutlineMoreHoriz,
   MdArrowForwardIos,
   MdKeyboardArrowDown,
+  MdKeyboardArrowRight,
 } from "react-icons/md";
 
 interface DropdownProps {
@@ -22,13 +22,13 @@ const Dropdown = ({ title, items }: DropdownProps) => {
   }, []);
 
   return (
-    <div className="w-full mr-6 font-medium">
+    <div className="w-full font-medium">
       <button
-        className="flex justify-between items-center w-full p-2 focus:outline-none"
+        className="flex justify-between items-center w-full focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex items-center gap-2">
-          <span className="text-[0.75rem] text-secondColumnText font-medium">
+          <span className="text-[0.81rem] text-secondColumnText font-medium">
             {title}
           </span>
         </div>
@@ -36,9 +36,9 @@ const Dropdown = ({ title, items }: DropdownProps) => {
         <div className="">
           <span>
             {isOpen ? (
-              <MdArrowForwardIos size={15} color="#BFBFBF" />
+              <MdKeyboardArrowDown size={20} color="#BFBFBF" />
             ) : (
-              <MdKeyboardArrowDown size={15} color="#BFBFBF" />
+              <MdKeyboardArrowRight size={20} color="#BFBFBF" />
             )}
           </span>
         </div>
@@ -57,7 +57,7 @@ const Dropdown = ({ title, items }: DropdownProps) => {
           {items?.map((item: string, index: number) => (
             <div
               key={index}
-              className="pl-4 border-gray-300 hover:bg-[#EEEFF1] text-blackInactive"
+              className="border-gray-300 hover:bg-[#EEEFF1] text-secondColumnText"
             >
               {item}
             </div>
