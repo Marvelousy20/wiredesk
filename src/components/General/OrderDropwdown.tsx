@@ -19,11 +19,15 @@ const OrderDropdown = ({ title, items }: OrderDropwdownProps) => {
         className="flex justify-between items-center w-full p-2 focus:outline-none"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <div className="flex items-center gap-2">
-          <span className="text-sm">{title}</span>
+        <div className="flex items-center gap-1">
+          <span className="text-sm text-black">{title}</span>
 
           <span>
-            {isOpen ? <ChevronDown size={15} /> : <ChevronUp size={15} />}
+            {isOpen ? (
+              <ChevronDown size={15} color="#232529" />
+            ) : (
+              <ChevronUp size={15} color="#232529" />
+            )}
           </span>
         </div>
       </button>

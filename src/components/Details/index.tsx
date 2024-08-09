@@ -25,7 +25,7 @@ const Details = () => {
             className=""
           >
             <div
-              className={`h-16 shadow-bottom w-full flex items-center shadow-b-2 ${
+              className={`h-[56px] shadow-bottom w-full flex items-center shadow-b-2 ${
                 isRightCollapsed ? "" : "px-8"
               }`}
             >

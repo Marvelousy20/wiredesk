@@ -12,6 +12,7 @@ import {
   MdOutlineMarkEmailUnread,
   MdOutlineGroups,
   MdOutlineSchool,
+  MdOutlineQuickreply,
 } from "react-icons/md";
 
 interface SelectableItems {
@@ -31,11 +32,10 @@ const NewSidebar = () => {
 
   const handleSelect = (item: string) => {
     setSelected(item);
-    // onSelect(item);
   };
   return (
     <div className={`column-a1 w-[3.571%] bg-narrowSidebar pb-4`}>
-      <div className="shadow-bottom h-16 justify-center flex items-center">
+      <div className="shadow-bottom h-[56px] justify-center flex items-center">
         <Image src="/sidebar/logo.svg" alt="logo" width={30} height={30} />
       </div>
 
@@ -240,6 +240,25 @@ const NewSidebar = () => {
         </div> */}
 
         <div className="flex-grow"></div>
+
+        <div>
+          <Link href="/connections">
+            <button
+              onClick={() => handleSelect("quickreply")}
+              className={`mb-5 p-2 hover:scale-110 transition-transform duration-200 ${
+                selected === "quickreply"
+                  ? "bg-sidebarSelected rounded-[4px]"
+                  : "hover:bg-sidebarSelected rounded-sm"
+              }`}
+            >
+              <MdOutlineQuickreply
+                size={selected === "quickreply" ? "24" : "20"}
+                color={selected === "quickreply" ? "white" : "#EEEFF1"}
+              />
+            </button>
+          </Link>
+        </div>
+
         <div>
           <Link href="/connections">
             <button

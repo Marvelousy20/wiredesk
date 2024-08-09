@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <QueryProvider>
           <SidebarProvider>
-            <main className="max-w-[1640px] mx-auto 2xl:border overflow-hidden h-screen text-black flex">
+            <main className="max-w-[1640px] mx-auto overflow-hidden h-screen text-black flex">
               <NewSidebar />
 
               {/* <MainContent /> */}

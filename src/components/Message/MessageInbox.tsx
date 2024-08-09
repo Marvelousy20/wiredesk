@@ -12,7 +12,7 @@ const MessagesInbox = () => {
   return (
     <section>
       <div
-        className={`h-16 shadow-bottom flex items-center justify-between px-5`}
+        className={`h-[56px] shadow-bottom flex items-center justify-between px-5`}
       >
         <div className={`flex items-center gap-5`}>
           <button
@@ -25,7 +25,7 @@ const MessagesInbox = () => {
           >
             <LuPanelRightClose size={20} />
           </button>
-          <h1 className="font-semibold lg:text-xl">Inbox</h1>
+          <h1 className="font-semibold">Inbox</h1>
         </div>
 
         <div className="flex items-center gap-2">
@@ -53,31 +53,60 @@ const MessagesInbox = () => {
             </span>
             <OrderDropdown title="Open" />
           </div>
-          <OrderDropdown title="Oldest" />
+          <OrderDropdown title="Newest" />
         </div>
       </div>
 
-      <div className="w-full">
+      <div className="w-full h-full px-3">
         <MessageCard
           img="/messages/w-avatar.svg"
-          name="James Books"
-          status="Sent"
-          time="12:15 PM"
+          name="Lucas Hernandez"
+          status="Received it, thank you."
+          time="Now"
           platform="/messages/Whatsapp.svg"
           unread={8}
+          active={true}
         />
         <MessageCard
           img="/messages/i-avatar.svg"
-          name="Lucas Hernadez"
-          status="Hello, I just submited..."
-          time="12:15 PM"
+          name="Susan Hernadez"
+          status="I’m great, thanks for asking..."
+          time="2h"
           platform="/messages/Instagram.svg"
         />
         <MessageCard
           img="/messages/s-avatar.svg"
-          name="Martha Judge"
+          name="John Doe"
+          status="I still can’t log into my account"
+          time="23m"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Somto George"
           status="Hello, I just submited..."
-          time="12:15 PM"
+          time="45m"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Philip Lahm"
+          status="Hello, I just submited..."
+          time="2h"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Leo Fernandez"
+          status="Okay I’ll check in back in a few hours"
+          time="4h"
+          platform="/messages/Slack.svg"
+        />
+        <MessageCard
+          img="/messages/s-avatar.svg"
+          name="Thomas Doe"
+          status="Hello, I just submited..."
+          time="10h"
           platform="/messages/Slack.svg"
         />
       </div>
