@@ -43,7 +43,19 @@ const InsatlledApplications = () => {
       <div className="h-[56px] border-b flex items-center pl-5">
         <h1 className="text-black text-xl font-semibold">Connectivity</h1>
       </div>
-
+      {data === undefined ?
+      <div className="flex justify-center p-[58px]">
+        <div className=" w-[21.31rem]">
+          <div>
+            <Image src="noApp.svg" alt="No App" width={308} height={309}/>
+          </div>
+          <div>
+            <p className="font-[600] text-[1.75rem] ">No Installed Application</p>
+            <p className="text-center">You currently have no applications installed. Connect your first app to get started!</p>
+          </div>
+        </div>
+      </div>
+        :
       <div>
         <div className="flex justify-center mt-4 max-w-[47rem] mx-auto relative">
           <div className="absolute top-3 left-4">
@@ -99,6 +111,11 @@ const InsatlledApplications = () => {
           </div>
         </div>
       </div>
+      }
+
+
+    
+      
     </div>
   );
 };

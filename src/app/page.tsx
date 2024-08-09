@@ -42,6 +42,7 @@ export default function Home() {
 
         <Details />
       </div>
+      
     </main>
   );
 }
