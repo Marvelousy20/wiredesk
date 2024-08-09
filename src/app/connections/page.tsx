@@ -22,7 +22,7 @@ const ConnectionHome = () => {
             flex items-center hover:bg-[#35353580] hover:bg-opacity-50  w-full justify-between p-2 cursor-pointer font-medium 
             ${
               selected === "all"
-                ? "bg-[#7149CE] bg-opacity-15 text-[#B699F9] rounded-tr-lg border-black rounded-r-[3px] container "
+                ? "bg-[#7149CE] bg-opacity-15 text-[#B699F9] rounded-tr-lg border-black rounded-r-[3px]"
                 : "text-secondColumnText"
             }`}
             >
@@ -37,7 +37,7 @@ const ConnectionHome = () => {
               flex items-center hover:bg-[#35353580] hover:bg-opacity-50  w-full justify-between p-2 cursor-pointer font-medium
               ${
                 selected === "installed"
-                  ? "bg-[#7149CE] bg-opacity-15 text-[#B699F9] rounded-tr-lg border-black rounded-r-[3px] container"
+                  ? "bg-[#7149CE] bg-opacity-15 text-[#B699F9] rounded-tr-lg border-black rounded-r-[3px]"
                   : "text-secondColumnText"
               }`}
             >
