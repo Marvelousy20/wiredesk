@@ -36,7 +36,7 @@ const NewSidebar = () => {
   return (
     <div className={`column-a1 w-[3.571%] bg-narrowSidebar pb-4`}>
       <div className="shadow-bottom h-16 justify-center flex items-center">
-        <Image src="/sidebar/logo.svg" alt="logo" width={30} height={30} />
+        <Image src="/sidebar/logo2.svg" alt="logo" width={30} height={30} />
       </div>
 
       <div className="mt-2 flex flex-col items-center h-full pb-16">
