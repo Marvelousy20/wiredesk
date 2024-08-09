@@ -45,12 +45,12 @@ const InsatlledApplications = () => {
       </div>
       {data === undefined ?
       <div className="flex justify-center p-[58px]">
-        <div className=" w-[341px]">
+        <div className=" w-[21.31rem]">
           <div>
             <Image src="noApp.svg" alt="No App" width={308} height={309}/>
           </div>
           <div>
-            <p className="font-[600] text-[28px] ">No Installed Application</p>
+            <p className="font-[600] text-[1.75rem] ">No Installed Application</p>
             <p className="text-center">You currently have no applications installed. Connect your first app to get started!</p>
           </div>
         </div>
