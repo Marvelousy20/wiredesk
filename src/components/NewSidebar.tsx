@@ -32,11 +32,10 @@ const NewSidebar = () => {
 
   const handleSelect = (item: string) => {
     setSelected(item);
-    // onSelect(item);
   };
   return (
     <div className={`column-a1 w-[3.571%] bg-narrowSidebar pb-4`}>
-      <div className="shadow-bottom h-16 justify-center flex items-center">
+      <div className="shadow-bottom h-[56px] justify-center flex items-center">
         <Image src="/sidebar/logo.svg" alt="logo" width={30} height={30} />
       </div>
 

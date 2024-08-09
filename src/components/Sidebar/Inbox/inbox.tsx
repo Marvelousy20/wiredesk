@@ -190,7 +190,7 @@ export default function Inbox() {
         {messages.map((message, id) => (
           <div
             key={id}
-            className={`flex items-center hover:bg-[#EEEFF1] justify-between p-2 cursor-pointer font-medium ${
+            className={`flex items-center hover:bg-[#35353580] hover:bg-opacity-50 justify-between p-2 cursor-pointer font-medium ${
               selectedInbox === message.title
                 ? "bg-[#7149CE] bg-opacity-15 text-[#B699F9] rounded-tr-lg border-black rounded-r-[3px]"
                 : "text-secondColumnText"

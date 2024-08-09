@@ -28,7 +28,7 @@ const Dropdown = ({ title, items }: DropdownProps) => {
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex items-center gap-2">
-          <span className="text-[0.81rem] text-secondColumnText font-medium">
+          <span className="text-[0.82rem] text-secondColumnText font-medium">
             {title}
           </span>
         </div>
@@ -57,7 +57,7 @@ const Dropdown = ({ title, items }: DropdownProps) => {
           {items?.map((item: string, index: number) => (
             <div
               key={index}
-              className="border-gray-300 hover:bg-[#EEEFF1] text-secondColumnText"
+              className="border-gray-300 hover:bg-[#35353580] cursor-pointer hover:bg-opacity-50 text-secondColumnText"
             >
               {item}
             </div>

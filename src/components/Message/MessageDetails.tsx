@@ -38,7 +38,7 @@ const MessageDetails = () => {
 
   return (
     <section>
-      <div className="h-16 shadow-bottom flex items-center justify-between px-5 w-full">
+      <div className="h-[56px] shadow-bottom flex items-center justify-between px-5 w-full">
         <div className="flex justify-between items-center w-full">
           <div className="flex gap-2">
             <Image

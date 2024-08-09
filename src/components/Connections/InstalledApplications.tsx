@@ -40,7 +40,7 @@ const InsatlledApplications = () => {
 
   return (
     <div className="text-black">
-      <div className="h-16 border-b flex items-center pl-5">
+      <div className="h-[56px] border-b flex items-center pl-5">
         <h1 className="text-black text-xl font-semibold">Connectivity</h1>
       </div>
 
